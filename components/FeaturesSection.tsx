@@ -121,7 +121,7 @@ export default function FeaturesSection() {
                 {f.tag}
               </span>
               {/* Icon */}
-              <div className="text-3xl mb-3">{f.icon}</div>
+              {/* <div className="text-3xl mb-3">{f.icon}</div> */}
               {/* Content */}
               <h3 className="font-display font-semibold text-white text-base mb-2">{f.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>

@@ -72,7 +72,7 @@ function TestCard({ t }: { t: typeof TESTIMONIALS[0] }) {
           ))}
         </div>
       </div>
-      <p className="text-slate-300 text-sm leading-relaxed">"{t.text}"</p>
+      <p className="text-slate-300 text-sm leading-relaxed overflow-clip">"{t.text}"</p>
     </div>
   );
 }

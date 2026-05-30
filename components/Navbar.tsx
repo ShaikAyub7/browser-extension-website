@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,20 +24,18 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass border-b border-violet-600/20 py-3"
+          ? "bg-black/10 backdrop-blur-md py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center shadow-lg group-hover:shadow-violet-500/40 transition-all">
-            <svg viewBox="0 0 20 20" fill="white" className="w-4 h-4">
-              <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm.5-9H9v4l3.5 2.1.75-1.23L10.5 10.5V7z"/>
-            </svg>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br flex items-center justify-center shadow-lg group-hover:shadow-violet-500/40 transition-all">
+            <Image src="/image.png" alt="Logo" className="w-8 h-8 object-cover" width={16} height={16} />
           </div>
           <span className="font-display font-700 text-white text-lg tracking-tight">
-            Tab<span className="text-violet-400">Time</span>
+            Tab<span className="text-violet-400">Time</span>Tracker
           </span>
         </Link>
 
@@ -59,7 +58,7 @@ export default function Navbar() {
             href="#install"
             className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold text-white font-display tracking-wide"
           >
-            Add to Chrome — Free
+            Add to Edge — Free
           </a>
         </div>
 

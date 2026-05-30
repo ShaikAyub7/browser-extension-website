@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function InstallSection() {
@@ -22,11 +23,8 @@ export default function InstallSection() {
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="glass rounded-3xl p-12 md:p-16 text-center reveal border border-violet-500/20" style={{ boxShadow: "0 0 80px rgba(139,92,246,0.15)" }}>
           {/* Icon */}
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-800 flex items-center justify-center mx-auto mb-6 shadow-lg glow-violet">
-            <svg viewBox="0 0 24 24" fill="white" className="w-10 h-10">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-              <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm-.5 14.5v-9l6 4.5-6 4.5z"/>
-            </svg>
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br flex items-center justify-center mx-auto mb-6 shadow-lg glow-violet">
+           <Image src="/image.png" alt="Logo" className="w-10 h-10" width={40} height={40} />
           </div>
 
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4 leading-tight">
@@ -40,7 +38,7 @@ export default function InstallSection() {
 
           {/* Install button */}
           <a
-            href="https://chrome.google.com/webstore"
+            href="https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-3 px-10 py-4 rounded-2xl text-white font-display font-bold text-lg mb-6"
@@ -48,23 +46,23 @@ export default function InstallSection() {
             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
             </svg>
-            Add to Chrome — It's Free
+            Add to Edge — It's Free
           </a>
 
           <p className="text-xs text-slate-600 font-mono mb-8">
-            v3.4.6 · Chrome & Chromium-based browsers · Manifest V3
+            v3.4.6 · Edge & Chromium-based browsers · Manifest V3
           </p>
 
           {/* Trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-6">
             {[
-              { icon: "🔒", label: "100% private" },
-              { icon: "⚡", label: "Zero performance impact" },
-              { icon: "🆓", label: "Free forever" },
-              { icon: "🧩", label: "Manifest V3" },
+              { label: "100% private" },
+              {label: "Zero performance impact" },
+              { label: "Free forever" },
+              {  label: "Manifest V3" },
             ].map((b) => (
               <div key={b.label} className="flex items-center gap-1.5 text-slate-500 text-sm">
-                <span>{b.icon}</span>
+                {/* <span>{b.icon}</span> */}
                 <span>{b.label}</span>
               </div>
             ))}

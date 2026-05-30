@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { value: 50000, suffix: "+", label: "Active users", icon: "👥", color: "#8B5CF6" },
-  { value: 4.9, suffix: "★", label: "Chrome Web Store rating", icon: "⭐", color: "#FBBF24" },
-  { value: 3.4, suffix: "M+", label: "Hours tracked daily", icon: "⏱️", color: "#22D3EE" },
+  { value: 80, suffix: "+", label: "Active users", icon: "👥", color: "#8B5CF6" },
+  { value: 4.9, suffix: "★", label: "Edge store rating", icon: "⭐", color: "#FBBF24" },
+  { value: 100, suffix: "+", label: "Hours tracked daily", icon: "⏱️", color: "#22D3EE" },
   { value: 100, suffix: "%", label: "Private — no server", icon: "🔒", color: "#A3E635" },
 ];
 

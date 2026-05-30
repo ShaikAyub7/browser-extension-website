@@ -123,7 +123,7 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       {/* Background layers */}
-      <div className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-100" />
+      <div className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-100 " />
       <div className="absolute inset-0 bg-radial-violet" />
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-glow" />
       <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
@@ -139,15 +139,12 @@ export default function HeroSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
             v3.4.6 — Free Chrome Extension
           </div>
-
-          <h1 className="font-display font-extrabold text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-white mb-6">
-            Know where
-            <br />
-            <span className="gradient-text">your time</span>
-            <br />
-            really goes.
-          </h1>
-
+<h1 className="font-display font-extrabold text-5xl lg:text-6xl xl:text-7xl leading-[0.95] text-white mb-6">
+  Know where
+  <br />
+  <span className="gradient-text">your time</span>
+  goes.
+</h1>
           <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-md">
             Tab Time Tracker watches every browser tab so you don't have to. Real-time stats, daily limits, AI insights, and Pomodoro focus — all in one popup.
           </p>
@@ -172,8 +169,8 @@ export default function HeroSection() {
 
           <div className="flex flex-wrap gap-5">
             {[
-              { n: "50k+", label: "Active users" },
-              { n: "4.9★", label: "Chrome store" },
+              { n: "80+", label: "Active users" },
+              { n: "4.9★", label: "Edge store" },
               { n: "100%", label: "Free forever" },
             ].map((s) => (
               <div key={s.label}>
@@ -193,16 +190,16 @@ export default function HeroSection() {
 
           {/* Floating badges */}
           <FloatingBadge className="absolute -top-6 -left-4 animate-float-slow">
-            🔥 7 day streak!
+             7 day streak!
           </FloatingBadge>
           <FloatingBadge className="absolute -bottom-4 -left-8 animate-float-fast"  >
-            ✅ Daily limit set: 6h
+             Daily limit set: 6h
           </FloatingBadge>
           <FloatingBadge className="absolute top-8 -right-6 animate-float-slow" >
-            🤖 AI insights ready
+             AI insights ready
           </FloatingBadge>
           <FloatingBadge className="absolute bottom-12 -right-4 animate-float-fast">
-            🍅 Focus: 23:00 left
+             Focus: 23:00 left
           </FloatingBadge>
 
           {/* Popup */}
