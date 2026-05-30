@@ -195,13 +195,13 @@ export default function HeroSection() {
           <FloatingBadge className="absolute -top-6 -left-4 animate-float-slow">
             🔥 7 day streak!
           </FloatingBadge>
-          <FloatingBadge className="absolute -bottom-4 -left-8 animate-float-fast" style={{ animationDelay: "1s" } as React.CSSProperties}>
+          <FloatingBadge className="absolute -bottom-4 -left-8 animate-float-fast"  >
             ✅ Daily limit set: 6h
           </FloatingBadge>
-          <FloatingBadge className="absolute top-8 -right-6 animate-float-slow" style={{ animationDelay: "0.5s" } as React.CSSProperties}>
+          <FloatingBadge className="absolute top-8 -right-6 animate-float-slow" >
             🤖 AI insights ready
           </FloatingBadge>
-          <FloatingBadge className="absolute bottom-12 -right-4 animate-float-fast" style={{ animationDelay: "2s" } as React.CSSProperties}>
+          <FloatingBadge className="absolute bottom-12 -right-4 animate-float-fast">
             🍅 Focus: 23:00 left
           </FloatingBadge>
 
