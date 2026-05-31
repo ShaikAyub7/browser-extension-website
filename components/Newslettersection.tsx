@@ -1,4 +1,5 @@
 "use client";
+import { Mailbox } from "lucide-react";
 import { useState } from "react";
 
 export default function NewsletterSection() {
@@ -27,7 +28,11 @@ export default function NewsletterSection() {
       <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
       <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
 
-        <div className="text-3xl mb-4">📬</div>
+        <div className="text-3xl mb-4">
+<Mailbox className="mx-auto w-12 h-12 text-gray-500" />
+
+
+        </div>
         <h2 className="font-display font-extrabold text-2xl md:text-3xl mb-2" style={{ color: "var(--text-heading)" }}>
           Get release notes in your inbox
         </h2>

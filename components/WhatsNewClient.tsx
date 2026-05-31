@@ -33,7 +33,7 @@ const RELEASES: Release[] = [
     summary:"The biggest release since v3.0. Tab Time Tracker now ships with a built-in AI chat panel powered by the Anthropic API. Ask it anything about your habits and get actionable advice.",
     highlight:"AI Assistant",
     changes:[
-      {kind:"new",     text:"AI Assistant tab: natural language chat about your browsing data. Bring your own Anthropic API key."},
+      {kind:"new",     text:"AI Assistant tab: natural language chat about your browsing data."},
       {kind:"new",     text:"Context-aware prompts: daily summary, hourly breakdown, top 10 sites, and productivity score are all injected automatically."},
       {kind:"new",     text:"Suggested questions shown on first open to help new users explore the feature."},
       {kind:"new",     text:"API key stored securely in chrome.storage.local, never transmitted to our servers."},
