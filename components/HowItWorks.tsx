@@ -67,12 +67,10 @@ export default function HowItWorks() {
 })}
           </div>
 
-          {/* Visual */}
           <div className="reveal reveal-delay-2 flex justify-center">
             <div className="relative w-full max-w-xs">
               <div className="absolute inset-0 bg-violet-100 rounded-3xl blur-3xl opacity-40"/>
               <div className="bg-white rounded-3xl p-8 shadow-card border border-snow-200 relative">
-                {/* Ring */}
                 <div className="flex justify-center mb-6">
                   <div className="relative w-32 h-32">
                     <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
@@ -92,7 +90,6 @@ export default function HowItWorks() {
                 <h3 className="font-display font-bold text-ink-900 text-xl text-center mb-2">{STEPS[active].title}</h3>
                 <p className="text-ink-500 text-sm text-center leading-relaxed">{STEPS[active].desc}</p>
 
-                {/* Dots */}
                 <div className="flex justify-center gap-2 mt-5">
                   {STEPS.map((_, i) => (
                     <button key={i} onClick={() => setActive(i)}

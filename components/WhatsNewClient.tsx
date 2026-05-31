@@ -184,7 +184,6 @@ function ReleaseCard({release,index}:{release:Release;index:number}) {
         <span className="text-xs text-ink-400 font-mono md:mt-1">{release.date}</span>
       </div>
 
-      {/* Timeline dot */}
       <div className="hidden md:block absolute left-[180px] top-0 bottom-0 w-10">
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-200 via-violet-100 to-transparent -translate-x-1/2"/>
         <div className="absolute top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 transition-all"
@@ -285,7 +284,6 @@ export default function WhatsNewClient() {
       <Navbar/>
       <main className="min-h-screen bg-white">
 
-        {/* Hero */}
         <section className="relative pt-32 pb-16 px-6 section-tint overflow-hidden">
           <div className="absolute inset-0 dot-grid bg-dot-grid bg-[size:28px_28px] opacity-50 pointer-events-none"/>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-violet-100 rounded-full blur-3xl opacity-60 pointer-events-none"/>
@@ -314,7 +312,6 @@ export default function WhatsNewClient() {
               Every feature, fix, and improvement across all Tab Time Tracker releases — most recent first.
             </p>
 
-            {/* Search */}
             {/* <div className="relative mt-8 max-w-md mx-auto">
               <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 105 11a6 6 0 0012 0z"/>
@@ -335,16 +332,11 @@ export default function WhatsNewClient() {
           </div>
         </section>
 
-        {/* Ad below hero */}
-     
-
-        {/* Stats + Filters */}
         <section className="px-6 pt-10 max-w-5xl mx-auto">
           <StatStrip/>
           <FilterBar active={filter} onChange={setFilter}/>
         </section>
 
-        {/* Timeline */}
         <section className="px-6 pb-28 max-w-5xl mx-auto">
           {filtered.length===0 ? (
             <div className="text-center py-20">
@@ -372,10 +364,8 @@ export default function WhatsNewClient() {
           )}
         </section>
 
-        {/* CTA */}
         <section className="px-6 pb-24 max-w-3xl mx-auto">
           <div className="section-violet rounded-3xl p-10 text-center border border-violet-200 shadow-card">
-            {/* <p className="text-3xl mb-4">🚀</p> */}
             <h2 className="font-display font-bold text-2xl text-ink-900 mb-2">Always improving</h2>
             <p className="text-ink-500 text-sm mb-6 max-w-sm mx-auto">
               New releases ship regularly. Add Tab Time Tracker and updates install automatically.

@@ -70,12 +70,10 @@ export default function StatsSection() {
           </h2>
         </div>
 
-        {/* Stat cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 reveal reveal-delay-1">
           {STATS.map((s) => <CountCard key={s.label} stat={s} active={started}/>)}
         </div>
 
-        {/* Heatmap */}
         <div className="bg-white rounded-2xl p-8 shadow-card border border-snow-200 mb-4 reveal reveal-delay-2">
           <div className="flex items-center justify-between mb-5">
             <div>
@@ -102,7 +100,6 @@ export default function StatsSection() {
           </div>
         </div>
 
-        {/* Productivity breakdown */}
         <div className="bg-white rounded-2xl p-8 shadow-card border border-snow-200 reveal reveal-delay-3">
           <p className="font-display font-bold text-ink-900 text-lg mb-5">Productivity breakdown</p>
           <div className="flex items-center gap-8">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WhatsNewClient from "./WhatsNewClient";
+import WhatsNewClient from "../../components/WhatsNewClient";
 
 export const metadata: Metadata = {
   title: "What's New — Tab Time Tracker",

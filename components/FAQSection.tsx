@@ -1,6 +1,6 @@
 "use client";
 import { FAQS } from "@/data";
-import { FileQuestion, Quote, ShieldQuestion } from "lucide-react";
+import {  ShieldQuestion } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 

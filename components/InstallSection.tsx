@@ -48,7 +48,6 @@ export default function InstallSection() {
               {icon:"🧩",label:"Manifest V3"},
             ].map((b) => (
               <div key={b.label} className="flex items-center gap-1.5 text-ink-500 text-sm">
-                {/* <span>{b.icon}</span> */}
                 <span>{b.label}</span>
               </div>
             ))}

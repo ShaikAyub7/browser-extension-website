@@ -15,7 +15,6 @@ export default function Footer() {
             </span>
           </div>
 
-          {/* Links */}
           <div className="flex items-center gap-6 text-sm text-ink-400">
             <a href="#features" className="hover:text-violet-600 transition-colors">Features</a>
             <a href="#faq" className="hover:text-violet-600 transition-colors">FAQ</a>

@@ -33,10 +33,7 @@ export default function FeaturesSection() {
           {FEATURES.map((f, i) => (
             <div key={f.title}
               className={`feature-card p-6 reveal reveal-delay-${(i % 4) + 1}`}>
-              {/* <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4"
-                style={{background: f.bg}}>
-                {f.icon}
-              </div> */}
+             
               <span className="inline-block text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full mb-3 border"
                 style={{color:f.accent,background:`${f.accent}12`,borderColor:`${f.accent}28`}}>
                 {f.tag}
