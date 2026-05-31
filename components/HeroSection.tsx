@@ -2,6 +2,7 @@
 import { SITES } from "@/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import AnnouncementBanner from "./Announcementbanner";
 
 function MockPopup() {
   const [activeBar, setActiveBar] = useState(0);
@@ -134,6 +135,7 @@ function FloatingBadge({ children, className }: { children: React.ReactNode; cla
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <AnnouncementBanner/>
       <div className="absolute inset-0 bg-radial-violet pointer-events-none" />
       <div className="absolute inset-0 dot-grid bg-dot-grid bg-[size:28px_28px] opacity-60 pointer-events-none" />
       <div

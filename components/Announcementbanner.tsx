@@ -23,7 +23,7 @@ export default function AnnouncementBanner() {
 
   return (
     <div
-      className="fixed left-0 right-0 z-[70] flex items-center justify-center gap-3 px-4 text-sm font-medium text-center"
+      className="absolute left-0 top-32 right-0 z-[70] flex items-center justify-center gap-3 px-4 text-sm font-medium text-center"
       style={{
         top: 0,
         height: "40px",

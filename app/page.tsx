@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <main>
         <HeroSection />
-        <AnnouncementBanner/>
+        {/* <AnnouncementBanner/> */}
         <FeaturesSection />
         <LiveDemo />
         <ChangelogStrip/>

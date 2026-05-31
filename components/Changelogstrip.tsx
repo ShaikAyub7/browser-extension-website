@@ -28,7 +28,6 @@ const UPDATES = [
     title: "AI Assistant — chat with your data",
     items: [
       "Natural language chat about your browsing habits",
-      "Bring your own Anthropic API key — stays on your device",
       "Analytics tab redesigned with 7-day, 30-day & all-time views",
     ],
   },
