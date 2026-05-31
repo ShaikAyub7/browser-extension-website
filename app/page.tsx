@@ -6,6 +6,7 @@ import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import InstallSection from "@/components/InstallSection";
+import AdSlot from "@/components/AdSlot";
 import Footer from "@/components/Footer";
 
 export default function Home() {

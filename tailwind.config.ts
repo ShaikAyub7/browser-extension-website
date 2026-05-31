@@ -9,71 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["'Syne'", "sans-serif"],
-        body: ["'DM Sans'", "sans-serif"],
-        mono: ["'JetBrains Mono'", "monospace"],
+        display: ["'Plus Jakarta Sans'", "sans-serif"],
+        serif:   ["'Instrument Serif'", "serif"],
+        body:    ["'Plus Jakarta Sans'", "sans-serif"],
+        mono:    ["'Geist Mono'", "monospace"],
       },
+        maxWidth: {
+      '8xl': '90rem', // 1440px
+    },
       colors: {
-        ink: {
-          950: "#04040A",
-          900: "#080812",
-          800: "#0E0E20",
-          700: "#16162E",
-          600: "#1E1E3F",
-        },
-        violet: {
-          400: "#A78BFA",
-          500: "#8B5CF6",
-          600: "#7C3AED",
-        },
-        cyan: {
-          400: "#22D3EE",
-          500: "#06B6D4",
-        },
-        lime: {
-          400: "#A3E635",
-          500: "#84CC16",
-        },
-      },
-      animation: {
-        "float-slow": "float 6s ease-in-out infinite",
-        "float-fast": "float 3.5s ease-in-out infinite",
-        "spin-slow": "spin 20s linear infinite",
-        "pulse-glow": "pulseGlow 3s ease-in-out infinite",
-        "slide-up": "slideUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards",
-        "fade-in": "fadeIn 0.6s ease forwards",
-        "count-up": "countUp 1.5s ease-out forwards",
-        marquee: "marquee 28s linear infinite",
-      },
-      keyframes: {
-        float: {
-          "0%,100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
-        pulseGlow: {
-          "0%,100%": { opacity: "0.5", transform: "scale(1)" },
-          "50%": { opacity: "1", transform: "scale(1.05)" },
-        },
-        slideUp: {
-          from: { opacity: "0", transform: "translateY(40px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-        fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
+        snow:   { 50:"#F8F8FC", 100:"#F1F0F7", 200:"#E4E2F0", 300:"#CCC8E0" },
+        ink:    { 400:"#9B95B8", 500:"#6B6488", 700:"#3A3555", 900:"#1A1730" },
+        violet: { 50:"#F4F0FF", 100:"#EAE0FF", 200:"#D3C0FF", 400:"#9B6EFF", 500:"#7C3AED", 600:"#6025C9" },
+        indigo: { 400:"#6366F1" },
       },
       backgroundImage: {
-        "grid-pattern":
-          "linear-gradient(rgba(139,92,246,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.07) 1px, transparent 1px)",
-        "radial-violet":
-          "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(139,92,246,0.35) 0%, transparent 65%)",
-        "radial-cyan":
-          "radial-gradient(ellipse 60% 50% at 80% 50%, rgba(34,211,238,0.18) 0%, transparent 60%)",
+        "dot-grid": "radial-gradient(circle, #D3C0FF 1px, transparent 1px)",
+        "radial-violet": "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(124,58,237,0.09) 0%, transparent 70%)",
+        "radial-indigo": "radial-gradient(ellipse 60% 50% at 85% 50%, rgba(99,102,241,0.07) 0%, transparent 65%)",
       },
     },
   },
