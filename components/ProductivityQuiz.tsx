@@ -91,7 +91,7 @@ export default function ProductivityQuiz() {
       <div className="max-w-2xl mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
           <div className="pill mx-auto mb-5">
-            <Brain className="w-4 h-4 mr-1" />
+            <Brain  className="w-4 h-4 mr-2" />
              Quick Quiz</div>
           <h2 className="font-display font-extrabold text-4xl md:text-5xl mb-4" style={{ color: "var(--text-heading)" }}>
             What&apos;s your{" "}
@@ -106,7 +106,8 @@ export default function ProductivityQuiz() {
           {step === 0 && (
             <div>
               <div className="text-6xl mb-6">
-                <Target className="mx-auto text-violet-500 w-12 h-12" />
+<Target className="mx-auto w-16 h-16" />
+
               </div>
               <h3 className="font-display font-bold text-2xl mb-3" style={{ color: "var(--text-heading)" }}>
                 Find your Productivity Profile

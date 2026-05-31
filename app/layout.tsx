@@ -18,17 +18,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9111059587670295"
-        crossOrigin="anonymous"
-      ></script>
-     </head>
-      <body className="font-body antialiased bg-white">
-        <Navbar/>
+        {/* Prevent flash of wrong theme */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function(){
+              try {
+                var t = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (t === 'dark' || (!t && prefersDark)) {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch(e){}
+            })();
+          `
+        }} />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9111059587670295"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="font-body antialiased" style={{ background: "var(--bg)" }}>
+        <Navbar />
         {children}
-        
-        </body>
+      </body>
     </html>
   );
 }

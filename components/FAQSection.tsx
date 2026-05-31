@@ -20,7 +20,7 @@ export default function FAQSection() {
 
   return (
     <section id="faq" ref={ref} className="relative py-22 px-6 section-tint">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto p-12">
         <div className="text-center mb-14 reveal">
           <div className="pill mx-auto mb-5">
             

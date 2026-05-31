@@ -39,20 +39,12 @@ export default function ThemeToggle() {
       {/* Track icons */}
       <span className="absolute left-1.5 text-[10px] select-none pointer-events-none">
         {dark ? 
-        <Sun className="w-4 h-4 text-white" />
+        <Moon className="w-4 h-4" /> 
         : 
-        <Moon className="w-4 h-4 text-gray-500" />
-        }
+        <Sun className="w-4 h-4" />}
+        
       </span>
-     
-
-      {/* Thumb */}
-      {/* <span
-        className="absolute w-5 h-5 rounded-full bg-white shadow-md transition-all duration-300 flex items-center justify-center text-[11px]"
-        style={{ left: dark ? "calc(100% - 22px)" : "2px" }}
-      >
-        {dark ? "🌙" : "☀️"}
-      </span> */}
+      
     </button>
   );
 }

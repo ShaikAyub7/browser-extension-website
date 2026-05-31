@@ -1,13 +1,13 @@
 "use client";
-import { Bird, Figma, FileStack, Gamepad, Github, HandHelpingIcon, Medal, Play, X, Youtube } from "lucide-react";
+import { Figma, File, Github, Play, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
 const DEMO_SITES = [
   { name: "youtube.com", emoji: Youtube, color: "#EF4444", time: 134, limit: 120 },
-  { name: "twitter.com", emoji: X, color: "#3B82F6", time: 63, limit: 90 },
+  { name: "twitter.com", emoji: Twitter, color: "#3B82F6", time: 63, limit: 90 },
   { name: "github.com", emoji: Github, color: "#10B981", time: 47, limit: 180 },
-  { name: "reddit.com", emoji: FileStack, color: "#F97316", time: 38, limit: 60 },
+  { name: "reddit.com", emoji: File, color: "#F97316", time: 38, limit: 60 },
   { name: "figma.com", emoji: Figma, color: "#8B5CF6", time: 22, limit: 120 },
 ];
 
@@ -86,9 +86,7 @@ export default function LiveDemo() {
     <section ref={ref} className="relative py-24 overflow-hidden section-base">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
-          <div className="pill mx-auto mb-5">
-            <Gamepad className="w-4 h-4 mr-1" />
-             Interactive Demo</div>
+          <div className="pill mx-auto mb-5">🎮 Interactive Demo</div>
           <h2 className="font-display font-extrabold text-4xl md:text-5xl mb-4" style={{ color: "var(--text-heading)" }}>
             Try it{" "}
             <span className="gradient-text italic font-serif">right now</span>
@@ -114,8 +112,9 @@ export default function LiveDemo() {
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-1">
                   <div className="w-5 h-5 rounded-lg bg-gradient-to-br flex items-center justify-center text-[10px]">
-<Image src="/image.png" alt="Tab Time Tracker" width={16} height={16} />
 
+                  <Image src="/image.png" alt="loading.." className="w-4 h-4 text-center" width={6} height={6} />
+ 
                   </div>
                   <span className="font-display font-bold text-sm" style={{ color: "var(--text-heading)" }}>
                     Tab Time Tracker
@@ -184,7 +183,9 @@ export default function LiveDemo() {
                           <div className="flex items-center justify-between mb-1">
                             <div className="flex items-center gap-1.5">
                               <span className="text-xs">
-                                <Icon className="text-center" />
+                                <Icon className="w-4 h-4" />
+
+
                               </span>
                               <span className="text-[11px] font-medium" style={{ color: "var(--text-body)" }}>{s.name}</span>
                               {over && <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-red-100 text-red-600 font-bold">OVER</span>}
@@ -289,20 +290,17 @@ export default function LiveDemo() {
                   <button
                     onClick={() => {
                       setFocusActive(!focusActive);
-                      if (!focusActive) showNotif("🍅 Focus session started! Distractions blocked.");
+                      if (!focusActive) showNotif("Focus session started! Distractions blocked.");
                     }}
                     className={`px-8 py-3 rounded-xl font-display font-bold text-sm mb-4 transition-all ${
                       focusActive ? "btn-secondary" : "btn-primary"
                     }`}
                   >
-                    {focusActive ? "⏸ Pause" 
-                    
-                    :
-                    <p className="flex items-center gap-2 justify-center">
-                    
-                    <Play/>Start Focus
-                    </p>
-                    }
+                    {focusActive ? "⏸ Pause" :<p className="flex items-center justify-center">
+                    <Play className="w-4 h-4 mr-1" />
+                    Start Focus
+                      </p>
+                      }
                   </button>
 
                   <div className="flex gap-2 justify-center">
