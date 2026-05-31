@@ -178,7 +178,7 @@ function ReleaseCard({release,index}:{release:Release;index:number}) {
 
       <div className="md:text-right pb-4 md:pb-0 md:pt-1 flex md:flex-col items-center md:items-end gap-3 md:gap-2">
         <div className="flex md:flex-col items-center md:items-end gap-2">
-          <span className="font-display font-extrabold text-2xl text-ink-900">v{release.version}</span>
+          <span className="font-display font-extrabold text-2xl ">v{release.version}</span>
           {release.tag && <VersionTag tag={release.tag}/>}
         </div>
         <span className="text-xs text-ink-400 font-mono md:mt-1">{release.date}</span>
@@ -203,7 +203,7 @@ function ReleaseCard({release,index}:{release:Release;index:number}) {
               ✦ {release.highlight}
             </span>
           )}
-          <h2 className="font-display font-bold text-xl text-ink-900 leading-snug">{release.headline}</h2>
+          <h2 className="font-display font-bold text-xl  leading-snug">{release.headline}</h2>
           <p className="text-ink-500 text-sm mt-2 leading-relaxed max-w-2xl">{release.summary}</p>
         </div>
 
@@ -282,7 +282,7 @@ export default function WhatsNewClient() {
   return (
     <>
       <Navbar/>
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen">
 
         <section className="relative pt-32 pb-16 px-6 section-tint overflow-hidden">
           <div className="absolute inset-0 dot-grid bg-dot-grid bg-[size:28px_28px] opacity-50 pointer-events-none"/>
@@ -304,7 +304,7 @@ export default function WhatsNewClient() {
             </div>
             </div> */}
 
-            <h1 className="font-display font-extrabold text-5xl md:text-6xl text-ink-900 leading-tight mb-4">
+            <h1 className="font-display font-extrabold text-5xl md:text-6xl  leading-tight mb-4">
               What&apos;s{" "}
               <span className="font-serif italic gradient-text">new</span>
             </h1>
@@ -318,7 +318,7 @@ export default function WhatsNewClient() {
               </svg>
               <input type="text" placeholder="Search releases…" value={search}
                 onChange={(e)=>setSearch(e.target.value)}
-                className="w-full bg-white rounded-xl pl-11 pr-4 py-3 text-sm text-ink-900 placeholder-ink-400 outline-none border border-snow-300 focus:border-violet-400 transition-colors shadow-card"
+                className="w-full bg-white rounded-xl pl-11 pr-4 py-3 text-sm  placeholder-ink-400 outline-none border border-snow-300 focus:border-violet-400 transition-colors shadow-card"
               />
               {search && (
                 <button onClick={()=>setSearch("")}
@@ -341,7 +341,7 @@ export default function WhatsNewClient() {
           {filtered.length===0 ? (
             <div className="text-center py-20">
               <p className="text-4xl mb-4">🔍</p>
-              <p className="font-display font-bold text-xl text-ink-900 mb-2">No results</p>
+              <p className="font-display font-bold text-xl  mb-2">No results</p>
               <p className="text-ink-500 text-sm">Try a different search or clear the filter.</p>
               <button onClick={()=>{setSearch("");setFilter(null);}}
                 className="mt-5 btn-secondary px-5 py-2.5 rounded-xl text-sm font-bold">
@@ -366,7 +366,7 @@ export default function WhatsNewClient() {
 
         <section className="px-6 pb-24 max-w-3xl mx-auto">
           <div className="section-violet rounded-3xl p-10 text-center border border-violet-200 shadow-card">
-            <h2 className="font-display font-bold text-2xl text-ink-900 mb-2">Always improving</h2>
+            <h2 className="font-display font-bold text-2xl mb-2">Always improving</h2>
             <p className="text-ink-500 text-sm mb-6 max-w-sm mx-auto">
               New releases ship regularly. Add Tab Time Tracker and updates install automatically.
             </p>
