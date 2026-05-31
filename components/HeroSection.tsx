@@ -1,5 +1,6 @@
 "use client";
 import { SITES } from "@/data";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -16,10 +17,8 @@ function MockPopup() {
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg bg-violet-500 flex items-center justify-center">
-            <svg viewBox="0 0 20 20" fill="white" className="w-3.5 h-3.5">
-              <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.5 5H9v4l3.5 2.1.75-1.23L10.5 10.5V7z"/>
-            </svg>
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center">
+           <Image src="/image.png" alt="TabTime Logo" width={16} height={16} />
           </div>
           <span className="font-display font-bold text-ink-900 text-sm">Tab Time Tracker</span>
         </div>
@@ -32,7 +31,6 @@ function MockPopup() {
         </div>
       </div>
 
-      {/* Total + donut */}
       <div className="flex items-center justify-between mb-4">
         <div>
           <p className="text-[10px] font-mono text-ink-400 uppercase tracking-widest">Today</p>
@@ -106,7 +104,7 @@ export default function HeroSection() {
 
           <h1 className="font-display font-extrabold text-5xl lg:text-6xl xl:text-[68px] leading-[1.04] tracking-tight text-ink-900 mb-6">
             Know where<br/>
-            <span className="font-serif italic gradient-text">your time</span><br/>
+            <span className="font-serif italic gradient-text">your time </span> <br/>
             really goes.
           </h1>
 
