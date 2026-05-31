@@ -20,7 +20,7 @@ export default function FeaturesSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 reveal">
           <div className="pill mx-auto mb-5">✦ Everything you need</div>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink-900 leading-tight">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl  leading-tight">
             A full productivity stack,<br/>
             <span className="font-serif italic gradient-text">inside one tiny popup.</span>
           </h2>
@@ -38,7 +38,7 @@ export default function FeaturesSection() {
                 style={{color:f.accent,background:`${f.accent}12`,borderColor:`${f.accent}28`}}>
                 {f.tag}
               </span>
-              <h3 className="font-display font-bold text-ink-900 text-[15px] mb-2">{f.title}</h3>
+              <h3 className="font-display font-bold  text-[15px] mb-2">{f.title}</h3>
               <p className="text-ink-500 text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}

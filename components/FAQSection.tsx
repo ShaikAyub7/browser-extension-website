@@ -29,7 +29,7 @@ export default function FAQSection() {
             FAQ
               </h2>
               </div>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink-900">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl ">
             Questions <span className="font-serif italic gradient-text">answered.</span>
           </h2>
         </div>

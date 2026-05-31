@@ -18,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        {/* Prevent flash of wrong theme */}
         <script dangerouslySetInnerHTML={{
           __html: `
             (function(){

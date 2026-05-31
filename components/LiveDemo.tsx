@@ -1,5 +1,5 @@
 "use client";
-import { Figma, File, Github, Play, Twitter, Youtube } from "lucide-react";
+import { Figma, File, Gamepad, Gamepad2, Github, Play, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
@@ -86,7 +86,7 @@ export default function LiveDemo() {
     <section ref={ref} className="relative py-24 overflow-hidden section-base">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
-          <div className="pill mx-auto mb-5">🎮 Interactive Demo</div>
+          <div className="pill mx-auto mb-5"><Gamepad2 className="w-5 h-5" /> Interactive Demo</div>
           <h2 className="font-display font-extrabold text-4xl md:text-5xl mb-4" style={{ color: "var(--text-heading)" }}>
             Try it{" "}
             <span className="gradient-text italic font-serif">right now</span>
@@ -143,7 +143,6 @@ export default function LiveDemo() {
               </div>
             </div>
 
-            {/* Notification */}
             {notification && (
               <div
                 className="mx-4 mt-3 px-3 py-2 rounded-xl text-xs font-semibold text-center"
@@ -153,7 +152,6 @@ export default function LiveDemo() {
               </div>
             )}
 
-            {/* Content */}
             <div className="p-5">
               {tab === "summary" && (
                 <div>

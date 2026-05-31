@@ -64,7 +64,7 @@ export default function StatsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 reveal">
           <div className="pill mx-auto mb-5"> By the numbers</div>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink-900 leading-tight">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl leading-tight">
             Trusted by thousands who<br/>
             <span className="font-serif italic gradient-text-warm">reclaimed their time.</span>
           </h2>
