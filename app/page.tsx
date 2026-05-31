@@ -9,14 +9,20 @@ import TipsSection from "@/components/TipsSection";
 import FAQSection from "@/components/FAQSection";
 import InstallSection from "@/components/InstallSection";
 import Footer from "@/components/Footer";
+import ChangelogStrip from "@/components/Changelogstrip";
+import ScrollUtilities from "@/components/Scrollutilities";
+import AnnouncementBanner from "@/components/Announcementbanner";
+import NewsletterSection from "@/components/Newslettersection";
 
 export default function Home() {
   return (
     <>
       <main>
         <HeroSection />
+        <AnnouncementBanner/>
         <FeaturesSection />
         <LiveDemo />
+        <ChangelogStrip/>
         <HowItWorks />
         <StatsSection />
         <ProductivityQuiz />
@@ -24,6 +30,8 @@ export default function Home() {
         <TipsSection />
         <FAQSection />
         <InstallSection />
+        <ScrollUtilities/>
+        <NewsletterSection/>
       </main>
       <Footer />
     </>
