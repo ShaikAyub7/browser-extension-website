@@ -18,16 +18,16 @@ export default function InstallSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[360px] bg-violet-200 rounded-full blur-3xl opacity-40 pointer-events-none"/>
 
       <div className="max-w-3xl mx-auto relative z-10">
-        <div className="bg-white rounded-3xl p-12 md:p-16 text-center shadow-[0_20px_80px_rgba(124,58,237,0.14)] border border-violet-200 reveal">
+        <div className=" rounded-3xl p-12 md:p-16 text-center shadow-[0_20px_80px_rgba(124,58,237,0.14)] border border-violet-200 reveal">
           <div className="w-20 h-20 rounded-2xl bg-gradient-to-br  flex items-center justify-center mx-auto mb-6 shadow-violet">
             <Image src="/image.png" alt="TabTime Logo" width={32} height={32} />
           </div>
 
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink-900 mb-4 leading-tight">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl mb-4 leading-tight">
             Start tracking in<br/>
             <span className="font-serif italic gradient-text">30 seconds.</span>
           </h2>
-          <p className="text-ink-500 text-lg mb-8 max-w-md mx-auto">
+          <p className=" text-lg mb-8 max-w-md mx-auto">
             Free forever. No sign-up. Your data never leaves your device.
           </p>
 

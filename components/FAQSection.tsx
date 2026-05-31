@@ -37,13 +37,13 @@ export default function FAQSection() {
         <div className="space-y-3 reveal reveal-delay-1">
           {FAQS.map((faq, i) => (
             <div key={i}
-              className={`bg-white rounded-2xl border transition-all duration-300 shadow-card ${
+              className={` rounded-2xl border transition-all duration-300 shadow-card ${
                 open===i ? "border-violet-200 shadow-hover" : "border-snow-200"
               }`}>
               <button
                 className="w-full px-6 py-5 flex items-center justify-between text-left group"
                 onClick={() => setOpen(open===i ? null : i)}>
-                <span className="font-display font-semibold text-ink-900 text-sm pr-4 group-hover:text-violet-600 transition-colors">
+                <span className="font-display font-semibold  text-sm pr-4 group-hover:text-violet-600 transition-colors">
                   {faq.q}
                 </span>
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
