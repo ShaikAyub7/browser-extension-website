@@ -14,7 +14,6 @@ function MockPopup() {
 
   return (
     <div className="bg-white rounded-2xl p-5 w-[320px] shadow-[0_20px_60px_rgba(60,40,120,0.18)] border border-snow-200 select-none">
-      {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-lg flex items-center justify-center">
@@ -95,7 +94,7 @@ export default function HeroSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] orbit-ring pointer-events-none"/>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[880px] h-[880px] orbit-ring-rev pointer-events-none"/>
 
-<div className="relative z-10 lg:min-w-[1440px]  mx-auto x-6 lg:px-12 grid lg:grid-cols-2 items-center gap-16 xl:gap-24">
+<div className="relative z-10 lg:min-w-[1340px] md:max-w-7xl  mx-auto x-6 lg:px-12 grid lg:grid-cols-2 items-center gap-16 xl:gap-24">
           <div>
           <div className="pill mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"/>

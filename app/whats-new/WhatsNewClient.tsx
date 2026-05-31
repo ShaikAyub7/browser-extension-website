@@ -193,7 +193,6 @@ function ReleaseCard({release,index}:{release:Release;index:number}) {
             : {background:"#E4E2F0",borderColor:"#CCC8E0"}}/>
       </div>
 
-      {/* Card */}
       <div className={`bg-white rounded-2xl p-6 md:p-8 relative overflow-hidden feature-card border ${
         isLatest ? "border-violet-200 shadow-hover" : "border-snow-200 shadow-card"
       }`}>
@@ -316,7 +315,7 @@ export default function WhatsNewClient() {
             </p>
 
             {/* Search */}
-            <div className="relative mt-8 max-w-md mx-auto">
+            {/* <div className="relative mt-8 max-w-md mx-auto">
               <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 105 11a6 6 0 0012 0z"/>
               </svg>
@@ -332,7 +331,7 @@ export default function WhatsNewClient() {
                   </svg>
                 </button>
               )}
-            </div>
+            </div> */}
           </div>
         </section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+// @ts-expect-error Next.js handles global CSS imports.
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossOrigin="anonymous"/>
       </head>
       <body className="font-body antialiased bg-white">{children}</body>

@@ -59,10 +59,10 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   { q:"Is Tab Time Tracker really free?",           a:"Yes — completely free, no premium tier, no subscription. The extension will always be free." },
-  { q:"Does it send my data to any server?",        a:"No. All data is stored in Chrome's local storage. Nothing leaves your browser unless you use the optional AI chat feature, which calls the Anthropic API with your own API key." },
+  { q:"Does it send my data to any server?",        a:"No. All data is stored in Browser's local storage. Nothing leaves your browser." },
   { q:"Will it slow down my browser?",              a:"No. Tracking runs in a lightweight service worker — no measurable performance impact." },
   { q:"What permissions does it need?",             a:"storage, activeTab, tabs, notifications, alarms, and scripting for focus mode blocking. It does NOT request broad host permissions beyond what the content script needs." },
-  { q:"How does the AI assistant work?",            a:"You provide your own Anthropic API key in Settings. Your browsing summary is included in the prompt for personalised advice — the key and data only leave your device in that direct API call." },
+  { q:"How does the AI assistant work?",            a:"Your browsing summary is included in the prompt for personalised advice — the key and data only leave your device in that direct API call." },
   { q:"Can I export my data?",                      a:"Yes — Settings → Export data. Download as CSV or JSON." },
   { q:"Does it track incognito tabs?",              a:"Only if you explicitly enable it in Chrome's extension settings. It's disabled in incognito by default." },
   { q:"How do streaks work?",                       a:"You earn a streak day by staying under your daily limit. Miss a day and your streak resets. A Streak Shield can protect you — you earn one every 7 days." },
