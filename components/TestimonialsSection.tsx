@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-snow-50 to-transparent pointer-events-none"/>
 
       <div className="text-center mb-14 px-6 reveal">
-        <div className="pill mx-auto mb-5">💬 What users say</div>
+        <div className="pill mx-auto mb-5"> What users say</div>
         <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink-900">
           From the Edge Add-on
         </h2>

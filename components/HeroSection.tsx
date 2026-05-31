@@ -127,7 +127,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-6">
             {[
               { n: "80+", label: "Active users" },
-              { n: "4.7★", label: "Chrome store" },
+              { n: "4.7★", label: "Edge Add-ons rating" },
               { n: "100%", label: "Free forever" },
             ].map((s) => (
               <div key={s.label}>

@@ -44,7 +44,7 @@ export const FEATURES = [
 ];
 export const STATS: Stat[] = [
   { value:80, suffix:"+",  label:"Active users",          icon:Users , color:"#7C3AED", bg:"#F5F3FF" },
-  { value:4.7,   suffix:"★",  label:"Chrome Web Store rating",icon:Star, color:"#F59E0B", bg:"#FFFBEB" },
+  { value:4.7,   suffix:"★",  label:"Edge Add-ons rating",icon:Star, color:"#F59E0B", bg:"#FFFBEB" },
   { value:100,   suffix:"+", label:"Hours tracked daily",   icon:Clock , color:"#3B82F6", bg:"#EFF6FF" },
   { value:100,   suffix:"%",  label:"Private — no server",   icon:Lock, color:"#10B981", bg:"#ECFDF5" },
 ];
