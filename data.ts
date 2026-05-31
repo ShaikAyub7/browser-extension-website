@@ -9,11 +9,11 @@ interface Stat {
 }
 
 export const links = [
-    { href: "#features",    label: "Features" },
-    { href: "#how-it-works",label: "How it works" },
-    { href: "#stats",       label: "Stats" },
+    { href: "/features",    label: "Features" },
+    { href: "/how-it-works",label: "How it works" },
+    { href: "/stats",       label: "Stats" },
     { href: "/whats-new",   label: "What's new", badge: true },
-    { href: "#faq",         label: "FAQ" },
+    { href: "/faq",         label: "FAQ" },
   ];
 
 export const SITES = [

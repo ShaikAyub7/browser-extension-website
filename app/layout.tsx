@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-// @ts-expect-error Next.js handles global CSS imports.
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Tab Time Tracker — Know Where Your Time Goes",
@@ -20,7 +20,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossOrigin="anonymous"/>
       </head>
-      <body className="font-body antialiased bg-white">{children}</body>
+      <body className="font-body antialiased bg-white">
+        <Navbar/>
+        {children}
+        
+        </body>
     </html>
   );
 }
