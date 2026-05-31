@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Tab Time Tracker — Know Where Your Time Goes",
+  
   description: "Monitor your daily browsing habits, set per-site limits, block distractions with Pomodoro focus sessions, and get AI-powered insights. Free Chrome extension.",
   keywords: "tab time tracker, browser extension, time tracking, productivity, pomodoro, chrome extension, digital wellbeing",
   openGraph: {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-9111059587670295"></meta>
         <link rel="icon" href="/favicon.ico" />
         <script dangerouslySetInnerHTML={{
           __html: `
