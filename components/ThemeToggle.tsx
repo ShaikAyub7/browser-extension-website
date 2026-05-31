@@ -36,7 +36,6 @@ export default function ThemeToggle() {
         borderColor: dark ? "rgba(139,92,246,0.4)" : "#D3C0FF",
       }}
     >
-      {/* Track icons */}
       <span className="absolute left-1.5 text-[10px] select-none pointer-events-none">
         {dark ? 
         <Moon className="w-4 h-4" /> 
