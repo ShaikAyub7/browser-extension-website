@@ -74,10 +74,10 @@ export default function StatsSection() {
           {STATS.map((s) => <CountCard key={s.label} stat={s} active={started}/>)}
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-card border border-snow-200 mb-4 reveal reveal-delay-2">
+        <div className=" rounded-2xl p-8 shadow-card border border-snow-200 mb-4 reveal reveal-delay-2">
           <div className="flex items-center justify-between mb-5">
             <div>
-              <p className="font-display font-bold text-ink-900 text-lg">Activity heatmap</p>
+              <p className="font-display font-bold  text-lg">Activity heatmap</p>
               <p className="text-ink-400 text-sm mt-0.5">Last 35 days of browsing intensity</p>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-ink-400">
@@ -100,8 +100,8 @@ export default function StatsSection() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-card border border-snow-200 reveal reveal-delay-3">
-          <p className="font-display font-bold text-ink-900 text-lg mb-5">Productivity breakdown</p>
+        <div className=" rounded-2xl p-8 shadow-card border border-snow-200 reveal reveal-delay-3">
+          <p className="font-display font-bold  text-lg mb-5">Productivity breakdown</p>
           <div className="flex items-center gap-8">
             <div className="text-center">
               <p className="font-display font-extrabold text-5xl gradient-text">72</p>

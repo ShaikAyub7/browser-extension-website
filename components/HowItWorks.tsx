@@ -24,11 +24,11 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" ref={ref} className="relative py-28 px-6 bg-white">
+    <section id="how-it-works" ref={ref} className="relative py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 reveal">
           <div className="pill mx-auto mb-5">↓ How it works</div>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink-900 leading-tight">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl  leading-tight">
             Up and running in{" "}
             <span className="font-serif italic gradient-text">30 seconds.</span>
           </h2>
@@ -42,7 +42,7 @@ export default function HowItWorks() {
               return <button key={s.num} onClick={() => setActive(i)}
                 className={`w-full text-left rounded-2xl p-5 transition-all duration-300 border ${
                   active === i
-                    ? "bg-white border-snow-300 shadow-hover"
+                    ? " border-snow-300 shadow-hover"
                     : "bg-snow-50 border-transparent hover:border-snow-300 hover:shadow-card"
                 }`}>
                 <div className="flex items-start gap-4">
@@ -53,7 +53,7 @@ export default function HowItWorks() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="font-mono text-[10px] text-ink-400">{s.num}</span>
-                      <h3 className="font-display font-bold text-ink-900 text-sm">{s.title}</h3>
+                      <h3 className="font-display font-bold  text-sm">{s.title}</h3>
                     </div>
                     <p className="text-ink-500 text-sm leading-relaxed">{s.desc}</p>
                     {active===i && (
@@ -70,7 +70,7 @@ export default function HowItWorks() {
           <div className="reveal reveal-delay-2 flex justify-center">
             <div className="relative w-full max-w-xs">
               <div className="absolute inset-0 bg-violet-100 rounded-3xl blur-3xl opacity-40"/>
-              <div className="bg-white rounded-3xl p-8 shadow-card border border-snow-200 relative">
+              <div className=" rounded-3xl p-8 shadow-card border border-snow-200 relative">
                 <div className="flex justify-center mb-6">
                   <div className="relative w-32 h-32">
                     <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
@@ -87,7 +87,7 @@ export default function HowItWorks() {
                   </div>
                 </div>
 
-                <h3 className="font-display font-bold text-ink-900 text-xl text-center mb-2">{STEPS[active].title}</h3>
+                <h3 className="font-display font-bold  text-xl text-center mb-2">{STEPS[active].title}</h3>
                 <p className="text-ink-500 text-sm text-center leading-relaxed">{STEPS[active].desc}</p>
 
                 <div className="flex justify-center gap-2 mt-5">
