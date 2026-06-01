@@ -163,8 +163,7 @@ export default function HeroSection() {
           >
             Know where
             <br />
-            <span className="font-serif italic gradient-text">your time </span>
-            <br />
+            <p className="font-serif italic gradient-text">your time </p>
             really goes.
           </h1>
 
