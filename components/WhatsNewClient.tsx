@@ -1,14 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { KIND_CONFIG,  RELEASES, TAG_CONFIG } from "@/data";
 import {ChangeKind, Release} from "@/types";
-
-
-
-
 
 
 const ALL_KINDS: ChangeKind[] = ["new","improved","fixed","security","removed"];
@@ -117,7 +111,7 @@ function StatStrip() {
 
 function FilterBar({active,onChange}:{active:ChangeKind|null;onChange:(k:ChangeKind|null)=>void}) {
   return (
-    <div className="flex flex-wrap gap-2 justify-center mb-12">
+    <div className="flex flex-wrap gap-2 justify-center mb-12 sticky top-7 z-10">
       <button onClick={()=>onChange(null)}
         className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold border transition-all ${
           active===null ? "bg-violet-500 border-violet-500 text-white" : "bg-white border-snow-300 text-ink-500 hover:border-violet-300 hover:text-violet-600"
@@ -155,9 +149,7 @@ export default function WhatsNewClient() {
 
   return (
     <>
-      <Navbar/>
-      <main className="min-h-screen">
-
+      <main className="min-h-screen relative">
         <section className="relative pt-32 pb-16 px-6 section-tint overflow-hidden">
           <div className="absolute inset-0 dot-grid bg-dot-grid bg-[size:28px_28px] opacity-50 pointer-events-none"/>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-violet-100 rounded-full blur-3xl opacity-60 pointer-events-none"/>
@@ -206,7 +198,7 @@ export default function WhatsNewClient() {
           </div>
         </section>
 
-        <section className="px-6 pt-10 max-w-5xl mx-auto">
+        <section className="px-6 pt-10 max-w-5xl mx-auto  z-10">
           <StatStrip/>
           <FilterBar active={filter} onChange={setFilter}/>
         </section>

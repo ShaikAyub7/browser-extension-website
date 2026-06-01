@@ -1,4 +1,4 @@
-import { Users,Clock,Star,Lock, Apple, Brain, Moon, Trophy , Download, Settings, Globe, BarChart, Lightbulb, Figma, Github, Twitter, Youtube, Calendar, User, ShieldEllipsis } from "lucide-react";
+import { Users,Clock,Star,Lock, Apple, Brain, Moon, Trophy , Download, Settings, Globe, BarChart, Lightbulb, Figma, Github, Twitter, Youtube, Calendar, User, ShieldEllipsis, TestTube2, ToyBrick } from "lucide-react";
 import { ChangeKind, Release, Stat } from "./types";
 
 export const links = [
@@ -267,7 +267,7 @@ export const DEMO_SITES = [
   { name: "youtube.com", emoji: Youtube, color: "#EF4444", time: 134, limit: 120 },
   { name: "twitter.com", emoji: Twitter, color: "#3B82F6", time: 63, limit: 90 },
   { name: "github.com", emoji: Github, color: "#10B981", time: 47, limit: 180 },
-  { name: "reddit.com", emoji: File, color: "#F97316", time: 38, limit: 60 },
+  { name: "reddit.com", emoji: ToyBrick, color: "#F97316", time: 38, limit: 60 },
   { name: "figma.com", emoji: Figma, color: "#8B5CF6", time: 22, limit: 120 },
 ];
 export const UPDATES = [
