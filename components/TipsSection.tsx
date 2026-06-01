@@ -1,17 +1,9 @@
 "use client";
-import { Apple, BarChart, Brain, Lightbulb, Moon, Trophy } from "lucide-react";
+import { TIPS } from "@/data";
+import {  Lightbulb  } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const TIPS = [
-  { icon: Brain, title: "The 2-minute rule", tip: "If you catch yourself on a distracting site, set a 2-minute timer. When it rings, decide consciously whether to stay. Most of the time, you'll leave.", tag: "Psychology" },
-  { icon: Apple, title: "Why 25 minutes?", tip: "Francesco Cirillo tested dozens of intervals. 25 minutes was the sweet spot where focus is deep but fatigue hasn't set in. Our brains work in ~90-minute ultradian cycles.", tag: "Science" },
-  { icon: BarChart, title: "The average person…", tip: "…switches tasks every 40 seconds when at a computer. It takes ~23 minutes to fully regain deep focus after each switch. Tracking helps you see the true cost.", tag: "Research" },
-  { icon: Lightbulb, title: "Notifications vs alerts", tip: "Browser notifications are fine — they bring you back. But site-visit alerts (like Tab Time Tracker's limit warnings) are 3× more effective at reducing overuse than app-level blocks.", tag: "Tip" },
-  { icon: Trophy, title: "Streaks work", tip: "A 7-day streak triggers the \"sunk cost\" commitment effect. Users who hit 7 days are 4× more likely to maintain healthy habits for 30+ days. Don't break the chain.", tag: "Motivation" },
-  { icon: Moon, title: "Evening = danger zone", tip: "The hour before bed is when most people exceed their limits. Your willpower is lowest then. Pre-scheduling a stricter evening cap removes the need for willpower entirely.", tag: "Strategy" },
-  { icon: BarChart, title: "Awareness > willpower", tip: "People who track their time spend 22% less on distracting sites — even without setting any limits. Just seeing the number is enough to change behavior.", tag: "Data" },
-  { icon: Lightbulb, title: "Your data stays local", tip: "Tab Time Tracker never sends your browsing data to any server. It lives in your browser's local storage. You own it — export as CSV or JSON any time.", tag: "Privacy" },
-];
+
 
 export default function TipsSection() {
   const [current, setCurrent] = useState(0);

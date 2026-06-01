@@ -1,12 +1,5 @@
-import { Users,Clock,Star,Lock, LucideIcon, Download, Settings, Globe, BarChart } from "lucide-react";
-interface Stat {
-  value: number;
-  suffix: string;
-  label: string;
-  icon: LucideIcon;
-  color: string;
-  bg: string;
-}
+import { Users,Clock,Star,Lock, Apple, Brain, Moon, Trophy , Download, Settings, Globe, BarChart, Lightbulb, Figma, Github, Twitter, Youtube, Calendar, User, ShieldEllipsis } from "lucide-react";
+import { ChangeKind, Release, Stat } from "./types";
 
 export const links = [
     { href: "/features",    label: "Features" },
@@ -66,4 +59,257 @@ export const FAQS = [
   { q:"Can I export my data?",                      a:"Yes — Settings → Export data. Download as CSV or JSON." },
   { q:"Does it track incognito tabs?",              a:"Only if you explicitly enable it in Chrome's extension settings. It's disabled in incognito by default." },
   { q:"How do streaks work?",                       a:"You earn a streak day by staying under your daily limit. Miss a day and your streak resets. A Streak Shield can protect you — you earn one every 7 days." },
+];
+
+
+export const RELEASES: Release[] = [
+  {
+    version:"3.4.6", date:"May 28 2026", tag:"comingSoon",
+    
+    headline:"Smarter AI suggestions & streak shields",
+    summary:"This release polishes the AI assistant, adds a streak-shield consumable so one bad day doesn't break your chain, and fixes a handful of timezone edge-cases.",
+    highlight:"Streak Shield",
+    changes:[
+      {kind:"new",     text:"Streak Shield: earn one shield every 7 days. Activate it to protect your streak when life happens."},
+      {kind:"new",     text:"AI assistant now suggests personalised daily limits based on your 14-day average."},
+      {kind:"improved",text:"AI prompt context now includes hourly breakdown, making suggestions significantly more accurate."},
+      {kind:"improved",text:"Heatmap tooltip now shows exact minutes instead of a generic intensity label."},
+      {kind:"fixed",   text:"Timezone bug that caused midnight reset to fire 1 hour early in GMT+5:30 (IST) regions."},
+      {kind:"fixed",   text:"Focus mode occasionally failed to redirect already-open tabs — now blocked on activation."},
+      {kind:"fixed",   text:"Streak counter showed incorrect value after manual date change in system clock."},
+    ],
+  },
+  {
+    version:"3.4.0", date:"Apr 14 2026", tag:"major",
+    headline:"AI Assistant — chat with your data",
+    summary:"The biggest release since v3.0. Tab Time Tracker now ships with a built-in AI chat panel powered by the Anthropic API. Ask it anything about your habits and get actionable advice.",
+    highlight:"AI Assistant",
+    changes:[
+      {kind:"new",     text:"AI Assistant tab: natural language chat about your browsing data."},
+      {kind:"new",     text:"Context-aware prompts: daily summary, hourly breakdown, top 10 sites, and productivity score are all injected automatically."},
+      {kind:"new",     text:"Suggested questions shown on first open to help new users explore the feature."},
+      {kind:"new",     text:"API key stored securely in chrome.storage.local, never transmitted to our servers."},
+      {kind:"improved",text:"Analytics tab redesigned with tabbed view: 7-day, 30-day, and all-time charts."},
+      {kind:"improved",text:"Productivity score algorithm updated — now weights recency and penalises late-night sessions."},
+      {kind:"fixed",   text:"Bar chart x-axis labels overlapping on narrow popup widths."},
+      {kind:"fixed",   text:"Per-site limit notification sometimes fired twice for the same domain."},
+    ],
+  },
+  {
+    version:"3.3.2", date:"Mar 02 2026", tag:"hotfix",
+    headline:"Hotfix: notification loop on Chrome 124",
+    summary:"Chrome 124 changed how alarms fire when the browser is throttled. This caused limit notifications to loop indefinitely. Patched within 6 hours of reports.",
+    changes:[
+      {kind:"fixed",text:"Notification loop caused by Chrome 124 alarm throttling — de-duplicated by storing last-notified timestamp."},
+      {kind:"fixed",text:"Edge case where the popup showed NaN% if a site was visited for < 1 second."},
+    ],
+  },
+  {
+    version:"3.3.0", date:"Feb 17 2026",
+    headline:"Scheduled work-hour limits",
+    summary:"You can now set different browsing limits for work hours vs. leisure time. Pair this with a strict block list to build a real deep-work routine.",
+    highlight:"Work-Hour Scheduling",
+    changes:[
+      {kind:"new",     text:"Work-hours schedule: configure start/end time and separate daily limit for that window."},
+      {kind:"new",     text:"Quick-toggle in the popup header to temporarily suspend work-hour limits (max 30 min snooze)."},
+      {kind:"new",     text:"Block list now supports wildcard patterns, e.g. *.reddit.com to block all subdomains."},
+      {kind:"improved",text:"Settings page reorganised into labelled sections — much easier to navigate."},
+      {kind:"improved",text:"Focus mode countdown now visible as a badge on the extension icon."},
+      {kind:"fixed",   text:"Import from CSV failed silently when the file had Windows-style CRLF line endings."},
+      {kind:"removed", text:"Legacy 'simple mode' toggle removed — all users now on the full UI."},
+    ],
+  },
+  {
+    version:"3.2.1", date:"Jan 09 2026",
+    headline:"Export, CSV import & site labels",
+    summary:"Data portability update. Export everything as JSON or CSV, import old data back, and label sites as Productive/Neutral/Distracting to power the productivity score.",
+    changes:[
+      {kind:"new",     text:"Export data as CSV or JSON from Settings → Export."},
+      {kind:"new",     text:"Import CSV to restore a previous export or merge data from another device."},
+      {kind:"new",     text:"Site labels: tag any domain as Productive, Neutral, or Distracting."},
+      {kind:"new",     text:"Productivity score (0–100) visible on the Summary tab, with a 7-day trend arrow."},
+      {kind:"improved",text:"All-time totals now shown alongside today's figures in the Summary tab."},
+      {kind:"fixed",   text:"Ignore-list entries weren't being persisted after browser restart."},
+    ],
+  },
+  {
+    version:"3.1.0", date:"Nov 30 2025",
+    headline:"35-day activity heatmap",
+    summary:"Inspired by GitHub's contribution graph, the new heatmap gives you a bird's-eye view of your browsing intensity over the past 35 days.",
+    highlight:"Activity Heatmap",
+    changes:[
+      {kind:"new",      text:"35-day heatmap on the Analytics tab. Hover any cell to see exact time for that day."},
+      {kind:"new",      text:"Streak counter visible in the popup header and on the heatmap."},
+      {kind:"improved", text:"Heatmap colour scale now adapts to your personal usage range, not a fixed scale."},
+      {kind:"improved", text:"Summary tab loads 60% faster by lazy-loading the chart library."},
+      {kind:"fixed",    text:"Bar chart sometimes showed yesterday's data after midnight reset."},
+      {kind:"security", text:"Content script no longer reads page content — reduced to URL-only access."},
+    ],
+  },
+  {
+    version:"3.0.0", date:"Sep 08 2025", tag:"major",
+    headline:"Full redesign — Manifest V3 & Pomodoro",
+    summary:"Tab Time Tracker 3.0 is a ground-up rebuild for Chrome's Manifest V3. The popup UI is completely redesigned, Pomodoro focus mode ships for the first time.",
+    highlight:"Pomodoro Focus Mode",
+    changes:[
+      {kind:"new",     text:"Rebuilt for Manifest V3 — service worker replaces background page."},
+      {kind:"new",     text:"Pomodoro focus mode with 25 / 45 / 60 min presets and per-session site blocking."},
+      {kind:"new",     text:"Per-site daily limits with browser notifications."},
+      {kind:"new",     text:"Completely redesigned popup with Summary, Analytics, Focus, and Settings tabs."},
+      {kind:"new",     text:"7-day and 30-day bar charts using Chart.js (bundled, no CDN dependency)."},
+      {kind:"new",     text:"Ignore list: exclude internal company domains or localhost from tracking."},
+      {kind:"improved",text:"Tracking accuracy improved — idle gaps > 60s are excluded automatically."},
+      {kind:"improved",text:"Midnight reset is now alarm-based — no more missed resets."},
+      {kind:"removed", text:"MV2 background.js and popup from v2.x — not compatible with new architecture."},
+    ],
+  },
+  {
+    version:"2.8.3", date:"Jun 21 2025",
+    headline:"Final MV2 release",
+    summary:"Last maintenance release on the Manifest V2 architecture before the 3.0 rebuild.",
+    changes:[
+      {kind:"fixed",   text:"Background page crashed on Chrome 115 due to deprecated chrome.tabs.onActivated argument shape."},
+      {kind:"fixed",   text:"Total time occasionally double-counted when switching tabs faster than 500ms."},
+      {kind:"improved",text:"Added deprecation notice prompting users to update to v3 when available."},
+    ],
+  },
+];
+
+export const KIND_CONFIG: Record<ChangeKind,{label:string;color:string;bg:string;border:string;icon:string}> = {
+  new:      {label:"New",      color:"#10B981",bg:"#ECFDF5",border:"#A7F3D0",icon:"✦"},
+  improved: {label:"Improved", color:"#3B82F6",bg:"#EFF6FF",border:"#BFDBFE",icon:"↑"},
+  fixed:    {label:"Fixed",    color:"#F97316",bg:"#FFF7ED",border:"#FED7AA",icon:"✓"},
+  removed:  {label:"Removed",  color:"#EF4444",bg:"#FEF2F2",border:"#FECACA",icon:"−"},
+  security: {label:"Security", color:"#8B5CF6",bg:"#F5F3FF",border:"#DDD6FE",icon:"🔒"},
+};
+
+export const TAG_CONFIG: Record<"latest"|"major"|"hotfix"|"comingSoon",{label:string;color:string;bg:string;border:string}> = {
+  latest:  {label:"Latest",  color:"#10B981",bg:"#ECFDF5",border:"#A7F3D0"},
+  major:   {label:"Major",   color:"#7C3AED",bg:"#F5F3FF",border:"#DDD6FE"},
+  hotfix:  {label:"Hotfix",  color:"#F97316",bg:"#FFF7ED",border:"#FED7AA"},
+  comingSoon: {label:"Coming Soon", color:"#10B981",bg:"#F9FAFB",border:"#A7F3D0"},
+};
+
+export const TIPS = [
+  { icon: Brain, title: "The 2-minute rule", tip: "If you catch yourself on a distracting site, set a 2-minute timer. When it rings, decide consciously whether to stay. Most of the time, you'll leave.", tag: "Psychology" },
+  { icon: Apple, title: "Why 25 minutes?", tip: "Francesco Cirillo tested dozens of intervals. 25 minutes was the sweet spot where focus is deep but fatigue hasn't set in. Our brains work in ~90-minute ultradian cycles.", tag: "Science" },
+  { icon: BarChart, title: "The average person…", tip: "…switches tasks every 40 seconds when at a computer. It takes ~23 minutes to fully regain deep focus after each switch. Tracking helps you see the true cost.", tag: "Research" },
+  { icon: Lightbulb, title: "Notifications vs alerts", tip: "Browser notifications are fine — they bring you back. But site-visit alerts (like Tab Time Tracker's limit warnings) are 3× more effective at reducing overuse than app-level blocks.", tag: "Tip" },
+  { icon: Trophy, title: "Streaks work", tip: "A 7-day streak triggers the \"sunk cost\" commitment effect. Users who hit 7 days are 4× more likely to maintain healthy habits for 30+ days. Don't break the chain.", tag: "Motivation" },
+  { icon: Moon, title: "Evening = danger zone", tip: "The hour before bed is when most people exceed their limits. Your willpower is lowest then. Pre-scheduling a stricter evening cap removes the need for willpower entirely.", tag: "Strategy" },
+  { icon: BarChart, title: "Awareness > willpower", tip: "People who track their time spend 22% less on distracting sites — even without setting any limits. Just seeing the number is enough to change behavior.", tag: "Data" },
+  { icon: Lightbulb, title: "Your data stays local", tip: "Tab Time Tracker never sends your browsing data to any server. It lives in your browser's local storage. You own it — export as CSV or JSON any time.", tag: "Privacy" },
+];
+
+
+
+
+export const QUESTIONS = [
+  {
+    q: "How many hours do you spend browsing per day?",
+    options: ["Less than 2h", "2–4 hours", "4–6 hours", "6+ hours"],
+    scores: [1, 2, 3, 4],
+  },
+  {
+    q: "How often do you open a new tab without a clear goal?",
+    options: ["Rarely", "A few times a day", "Every hour", "Constantly"],
+    scores: [1, 2, 3, 4],
+  },
+  {
+    q: "Do you use a Pomodoro or focus timer?",
+    options: ["Yes, daily", "Sometimes", "Rarely", "Never heard of it"],
+    scores: [1, 2, 3, 4],
+  },
+  {
+    q: "How often do social media sites distract you at work?",
+    options: ["Never", "Once a day", "A few times", "All the time"],
+    scores: [1, 2, 3, 4],
+  },
+  {
+    q: "Do you know your #1 most visited website today?",
+    options: ["Yes, exactly", "I can guess", "Not really", "No idea"],
+    scores: [1, 2, 3, 4],
+  },
+];
+
+export const RESULTS = [
+  {
+    range: [5, 9],
+    title: "Focus Champion 🏆",
+    desc: "Your browsing habits are already excellent! Tab Time Tracker can help you maintain your streak and spot any drift before it happens.",
+    color: "#10B981",
+    bg: "var(--bg-soft)",
+  },
+  {
+    range: [10, 14],
+    title: "Aware Surfer 🌊",
+    desc: "You're conscious of your habits but could use a little help. Set a daily limit and watch your productivity score climb.",
+    color: "#3B82F6",
+    bg: "var(--bg-soft)",
+  },
+  {
+    range: [15, 17],
+    title: "Distraction Prone ⚡",
+    desc: "You spend more time online than intended. Pomodoro focus mode + site blocking can give you back 1–2 hours a day.",
+    color: "#F97316",
+    bg: "var(--bg-soft)",
+  },
+  {
+    range: [18, 20],
+    title: "Scroll Spiral 🌀",
+    desc: "Your browsing habits are costing you serious focus time. Start with a 4h daily cap and block your top 3 distracting sites. You'll feel the difference by day 3.",
+    color: "#EF4444",
+    bg: "var(--bg-soft)",
+  },
+];
+
+export const DEMO_SITES = [
+  { name: "youtube.com", emoji: Youtube, color: "#EF4444", time: 134, limit: 120 },
+  { name: "twitter.com", emoji: Twitter, color: "#3B82F6", time: 63, limit: 90 },
+  { name: "github.com", emoji: Github, color: "#10B981", time: 47, limit: 180 },
+  { name: "reddit.com", emoji: File, color: "#F97316", time: 38, limit: 60 },
+  { name: "figma.com", emoji: Figma, color: "#8B5CF6", time: 22, limit: 120 },
+];
+export const UPDATES = [
+  {
+    version: "3.4.6",
+    date: "May 28 2026",
+    badge: "latest",
+    badgeColor: "#10B981",
+    badgeBg: "rgba(16,185,129,0.12)",
+    icon: ShieldEllipsis,
+    title: "Streak Shield + smarter AI suggestions",
+    items: [
+      "Earn a Streak Shield every 7 days — use it to protect your chain",
+      "AI now suggests personalized limits from your 14-day average",
+      "Fixed GMT+5:30 timezone midnight-reset bug",
+    ],
+  },
+  {
+    version: "3.4.0",
+    date: "Apr 14 2026",
+    badge: "major",
+    badgeColor: "#7C3AED",
+    badgeBg: "rgba(124,58,237,0.12)",
+    icon: User,
+    title: "AI Assistant — chat with your data",
+    items: [
+      "Natural language chat about your browsing habits",
+      "Analytics tab redesigned with 7-day, 30-day & all-time views",
+    ],
+  },
+  {
+    version: "3.3.0",
+    date: "Feb 22 2026",
+    badge: "feature",
+    badgeColor: "#3B82F6",
+    badgeBg: "rgba(59,130,246,0.12)",
+    icon:Calendar,
+    title: "Scheduled work limits",
+    items: [
+      "Stricter site limits during work hours (9–5 default, configurable)",
+      "Different caps for work vs leisure time windows",
+      "Heatmap now shows 35 days with hover tooltips",
+    ],
+  },
 ];

@@ -1,51 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Calendar, Notebook, ShieldEllipsis, User } from "lucide-react";
+import { Notebook } from "lucide-react";
 
-const UPDATES = [
-  {
-    version: "3.4.6",
-    date: "May 28 2026",
-    badge: "latest",
-    badgeColor: "#10B981",
-    badgeBg: "rgba(16,185,129,0.12)",
-    icon: ShieldEllipsis,
-    title: "Streak Shield + smarter AI suggestions",
-    items: [
-      "Earn a Streak Shield every 7 days — use it to protect your chain",
-      "AI now suggests personalized limits from your 14-day average",
-      "Fixed GMT+5:30 timezone midnight-reset bug",
-    ],
-  },
-  {
-    version: "3.4.0",
-    date: "Apr 14 2026",
-    badge: "major",
-    badgeColor: "#7C3AED",
-    badgeBg: "rgba(124,58,237,0.12)",
-    icon: User,
-    title: "AI Assistant — chat with your data",
-    items: [
-      "Natural language chat about your browsing habits",
-      "Analytics tab redesigned with 7-day, 30-day & all-time views",
-    ],
-  },
-  {
-    version: "3.3.0",
-    date: "Feb 22 2026",
-    badge: "feature",
-    badgeColor: "#3B82F6",
-    badgeBg: "rgba(59,130,246,0.12)",
-    icon:Calendar,
-    title: "Scheduled work limits",
-    items: [
-      "Stricter site limits during work hours (9–5 default, configurable)",
-      "Different caps for work vs leisure time windows",
-      "Heatmap now shows 35 days with hover tooltips",
-    ],
-  },
-];
+import { UPDATES } from "@/data";
 
 export default function ChangelogStrip() {
   const ref = useRef<HTMLDivElement>(null);

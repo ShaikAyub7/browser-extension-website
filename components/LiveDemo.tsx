@@ -1,15 +1,10 @@
 "use client";
-import { Figma, File, Gamepad, Gamepad2, Github, Play, Twitter, Youtube } from "lucide-react";
+import { DEMO_SITES } from "@/data";
+import { Gamepad2, Play } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, createElement } from "react";
 
-const DEMO_SITES = [
-  { name: "youtube.com", emoji: Youtube, color: "#EF4444", time: 134, limit: 120 },
-  { name: "twitter.com", emoji: Twitter, color: "#3B82F6", time: 63, limit: 90 },
-  { name: "github.com", emoji: Github, color: "#10B981", time: 47, limit: 180 },
-  { name: "reddit.com", emoji: File, color: "#F97316", time: 38, limit: 60 },
-  { name: "figma.com", emoji: Figma, color: "#8B5CF6", time: 22, limit: 120 },
-];
+
 
 function fmt(mins: number) {
   if (mins < 60) return `${mins}m`;
@@ -175,14 +170,13 @@ export default function LiveDemo() {
                     {sites.map((s, i) => {
                       const over = s.time > s.limit;
                       const pct = Math.min(100, Math.round((s.time / s.limit) * 100));
-                      const Icon = s.emoji;
+                      const Icon = s.emoji as any;
                       return (
                         <div key={s.name}>
                           <div className="flex items-center justify-between mb-1">
                             <div className="flex items-center gap-1.5">
                               <span className="text-xs">
-                                <Icon className="w-4 h-4" />
-
+                                {typeof Icon === "string" ? Icon : createElement(Icon, { className: "w-4 h-4" })}
 
                               </span>
                               <span className="text-[11px] font-medium" style={{ color: "var(--text-body)" }}>{s.name}</span>
@@ -294,11 +288,14 @@ export default function LiveDemo() {
                       focusActive ? "btn-secondary" : "btn-primary"
                     }`}
                   >
-                    {focusActive ? "⏸ Pause" :<p className="flex items-center justify-center">
-                    <Play className="w-4 h-4 mr-1" />
-                    Start Focus
-                      </p>
-                      }
+                    {focusActive ? (
+                      "⏸ Pause"
+                    ) : (
+                      <span className="flex items-center justify-center">
+                        <Play className="w-4 h-4 mr-1" />
+                        Start Focus
+                      </span>
+                    )}
                   </button>
 
                   <div className="flex gap-2 justify-center">

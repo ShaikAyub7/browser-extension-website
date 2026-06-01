@@ -1,65 +1,7 @@
 "use client";
+import { QUESTIONS, RESULTS } from "@/data";
 import { Brain, Target } from "lucide-react";
 import { useState } from "react";
-
-const QUESTIONS = [
-  {
-    q: "How many hours do you spend browsing per day?",
-    options: ["Less than 2h", "2–4 hours", "4–6 hours", "6+ hours"],
-    scores: [1, 2, 3, 4],
-  },
-  {
-    q: "How often do you open a new tab without a clear goal?",
-    options: ["Rarely", "A few times a day", "Every hour", "Constantly"],
-    scores: [1, 2, 3, 4],
-  },
-  {
-    q: "Do you use a Pomodoro or focus timer?",
-    options: ["Yes, daily", "Sometimes", "Rarely", "Never heard of it"],
-    scores: [1, 2, 3, 4],
-  },
-  {
-    q: "How often do social media sites distract you at work?",
-    options: ["Never", "Once a day", "A few times", "All the time"],
-    scores: [1, 2, 3, 4],
-  },
-  {
-    q: "Do you know your #1 most visited website today?",
-    options: ["Yes, exactly", "I can guess", "Not really", "No idea"],
-    scores: [1, 2, 3, 4],
-  },
-];
-
-const RESULTS = [
-  {
-    range: [5, 9],
-    title: "Focus Champion 🏆",
-    desc: "Your browsing habits are already excellent! Tab Time Tracker can help you maintain your streak and spot any drift before it happens.",
-    color: "#10B981",
-    bg: "var(--bg-soft)",
-  },
-  {
-    range: [10, 14],
-    title: "Aware Surfer 🌊",
-    desc: "You're conscious of your habits but could use a little help. Set a daily limit and watch your productivity score climb.",
-    color: "#3B82F6",
-    bg: "var(--bg-soft)",
-  },
-  {
-    range: [15, 17],
-    title: "Distraction Prone ⚡",
-    desc: "You spend more time online than intended. Pomodoro focus mode + site blocking can give you back 1–2 hours a day.",
-    color: "#F97316",
-    bg: "var(--bg-soft)",
-  },
-  {
-    range: [18, 20],
-    title: "Scroll Spiral 🌀",
-    desc: "Your browsing habits are costing you serious focus time. Start with a 4h daily cap and block your top 3 distracting sites. You'll feel the difference by day 3.",
-    color: "#EF4444",
-    bg: "var(--bg-soft)",
-  },
-];
 
 export default function ProductivityQuiz() {
   const [step, setStep] = useState(0); // 0 = intro, 1-5 = questions, 6 = result
