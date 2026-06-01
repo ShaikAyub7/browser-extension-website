@@ -180,7 +180,7 @@ export const KIND_CONFIG: Record<ChangeKind,{label:string;color:string;bg:string
   improved: {label:"Improved", color:"#3B82F6",bg:"#EFF6FF",border:"#BFDBFE",icon:"↑"},
   fixed:    {label:"Fixed",    color:"#F97316",bg:"#FFF7ED",border:"#FED7AA",icon:"✓"},
   removed:  {label:"Removed",  color:"#EF4444",bg:"#FEF2F2",border:"#FECACA",icon:"−"},
-  security: {label:"Security", color:"#8B5CF6",bg:"#F5F3FF",border:"#DDD6FE",icon:"🔒"},
+  security: {label:"Security", color:"#8B5CF6",bg:"#F5F3FF",border:"#DDD6FE",icon:"⚠"},
 };
 
 export const TAG_CONFIG: Record<"latest"|"major"|"hotfix"|"comingSoon",{label:string;color:string;bg:string;border:string}> = {
