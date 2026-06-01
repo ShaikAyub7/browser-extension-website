@@ -55,7 +55,7 @@ export default function HowItWorks() {
                       <span className="font-mono text-[10px] text-ink-400">{s.num}</span>
                       <h3 className="font-display font-bold  text-sm">{s.title}</h3>
                     </div>
-                    <p className="text-ink-500 text-sm leading-relaxed">{s.desc}</p>
+                    <p className=" text-sm leading-relaxed">{s.desc}</p>
                     {active===i && (
                       <p className="mt-2 text-[11px] font-mono text-ink-400 bg-snow-100 rounded-lg px-3 py-1.5 inline-block border border-snow-300">
                         {s.detail}
@@ -88,7 +88,7 @@ export default function HowItWorks() {
                 </div>
 
                 <h3 className="font-display font-bold  text-xl text-center mb-2">{STEPS[active].title}</h3>
-                <p className="text-ink-500 text-sm text-center leading-relaxed">{STEPS[active].desc}</p>
+                <p className=" text-sm text-center leading-relaxed">{STEPS[active].desc}</p>
 
                 <div className="flex justify-center gap-2 mt-5">
                   {STEPS.map((_, i) => (
