@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AlertTriangle, BugPlay, Download, ShieldCheck, Sparkles } from "lucide-react";
-import UpcomingUiUx from "@/components/beta/UpcomingUiUx";
-import UpcomingSyncData from "@/components/beta/UpcomingSyncData";
-import UpcomingGamification from "@/components/beta/UpcomingGamification";
+import { AlertTriangle, BugPlay, Download, ShieldCheck, Sparkles, Package, Puzzle, RefreshCw, Wrench } from "lucide-react";
+import FeedbackReportCard from "@/components/beta/FeedbackReportCard";
+import ScreenshotsShowcase from "@/components/beta/ScreenshotsShowcase";
 
 export const metadata: Metadata = {
   title: "Beta Download — Tab Time Tracker",
@@ -66,17 +65,47 @@ export default function BetaPage() {
             </Link>
           </div>
 
-          {/* <div className="rounded-2xl border border-amber-200/80 bg-amber-50/90 dark:bg-amber-500/10 px-4 py-4 text-sm text-amber-950 dark:text-amber-100 mb-8 flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-            <p>
-              Put your beta zip file at <span className="font-mono">public/beta/tabtime-beta.zip</span> so this button downloads the installer.
-            </p>
-          </div> */}
+         
 
           <div className="grid sm:grid-cols-3 gap-4">
             <BetaStat label="For testers" value="Pre-release access" />
             <BetaStat label="Update cadence" value="Faster than stable" />
             <BetaStat label="Feedback loop" value="Report issues early" />
+          </div>
+
+          <div className="mt-8 rounded-[1.5rem] border border-violet-100/80 bg-white/75 dark:bg-white/5 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "var(--pill-bg)", color: "var(--pill-color)" }}>
+                <Package className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-display font-bold text-lg" style={{ color: "var(--text-heading)" }}>
+                  What&apos;s inside the beta zip
+                </h3>
+                <p className="text-sm" style={{ color: "var(--text-faint)" }}>
+                  A test build with upcoming improvements and bug fixes.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-3 text-sm" style={{ color: "var(--text-muted)" }}>
+              <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
+                <Puzzle className="w-4 h-4 mt-0.5 text-violet-500 flex-shrink-0" />
+                <span>Upcoming UI / UX improvements from the roadmap sections below.</span>
+              </div>
+              <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
+                <RefreshCw className="w-4 h-4 mt-0.5 text-sky-500 flex-shrink-0" />
+                <span>Fresh beta updates and quick fixes before the stable release.</span>
+              </div>
+              <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
+                <Wrench className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
+                <span>Experimental settings and workflow tweaks for testing only.</span>
+              </div>
+              <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
+                <Sparkles className="w-4 h-4 mt-0.5 text-emerald-500 flex-shrink-0" />
+                <span>Feature previews so users can help shape the next version.</span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -127,9 +156,8 @@ export default function BetaPage() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto mt-12 space-y-8">
-        <UpcomingUiUx />
-        <UpcomingSyncData />
-        <UpcomingGamification />
+        <ScreenshotsShowcase />
+        <FeedbackReportCard />
       </div>
     </main>
   );
