@@ -27,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://tab-time-tracker.vercel.app/dashboard',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: 'https://tab-time-tracker.vercel.app/whats-new',
       lastModified: new Date(),
       changeFrequency: 'weekly',
