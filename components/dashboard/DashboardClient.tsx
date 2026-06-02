@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BarChart3, CircleAlert, Clock3, Database, FileJson2, FileText, RefreshCw, Upload, ArrowUpRight } from "lucide-react";
 
 type SiteEntry = {
@@ -322,22 +322,26 @@ function MetricCard({
     </div>
   );
 }
+const defaultDashboard: DashboardData = {
+  sourceName: "No data available",
+  importedAt: "N/A",
+  totalMinutes: 0,
+  activeDays: 0,
+  topSites: [],
+  note: "Upload a file to view your dashboard.",
+};
 
 export default function DashboardClient() {
+useEffect(() => {
   const data = localStorage.getItem("dashboardData");
 
-const [dashboard, setDashboard] = useState<DashboardData>(
-  data
-    ? JSON.parse(data)
-    : {
-        sourceName: "No data available",
-        importedAt: "N/A",
-        totalMinutes: 0,
-        activeDays: 0,
-        topSites: [],
-        note: "Upload a file to view your dashboard.",
-      }
-);
+  if (data) {
+    setDashboard(JSON.parse(data));
+  }
+}, []);
+const [dashboard, setDashboard] =
+  useState<DashboardData>(defaultDashboard);
+
   const [error, setError] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
 
@@ -346,13 +350,12 @@ const [dashboard, setDashboard] = useState<DashboardData>(
   const maxMinutes = Math.max(...dashboard.topSites.map((site) => site.minutes), 1);
  
  const handleResetToData = () => {
-  const savedData = localStorage.getItem("dashboardData");
+  const savedData = localStorage.removeItem("dashboardData");
 
-  if (savedData) {
-    setDashboard(JSON.parse(savedData));
-  }
+  
 
   setError(null);
+  return savedData;
 };
 
 
@@ -424,7 +427,7 @@ const [dashboard, setDashboard] = useState<DashboardData>(
       <div className="relative z-10 max-w-7xl mx-auto space-y-8">
 
         {
-            !data?<section className="glass rounded-[2rem] p-8 md:p-12 ">
+            !dashboard?<section className="glass rounded-[2rem] p-8 md:p-12 ">
           <div className="pill mb-5 inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             Website dashboard
