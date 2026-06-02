@@ -341,7 +341,6 @@ useEffect(() => {
 }, []);
 const [dashboard, setDashboard] =
   useState<DashboardData>(defaultDashboard);
-
   const [error, setError] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
 
@@ -427,7 +426,7 @@ const [dashboard, setDashboard] =
       <div className="relative z-10 max-w-7xl mx-auto space-y-8">
 
         {
-            !dashboard?<section className="glass rounded-[2rem] p-8 md:p-12 ">
+            (dashboard.topSites?.length ?? 0) === 0  ?<section className="glass rounded-[2rem] p-8 md:p-12 ">
           <div className="pill mb-5 inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             Website dashboard
