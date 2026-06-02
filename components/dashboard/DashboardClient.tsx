@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { BarChart3, CircleAlert, Clock3, Database, FileJson2, FileText, RefreshCw, Upload, ArrowUpRight } from "lucide-react";
+import { redirect } from "next/navigation";
 
 type SiteEntry = {
   site: string;
@@ -349,12 +350,10 @@ const [dashboard, setDashboard] =
   const maxMinutes = Math.max(...dashboard.topSites.map((site) => site.minutes), 1);
  
  const handleResetToData = () => {
-  const savedData = localStorage.removeItem("dashboardData");
-
-  
-
+  localStorage.removeItem("dashboardData");
   setError(null);
-  return savedData;
+
+  window.location.reload();
 };
 
 
