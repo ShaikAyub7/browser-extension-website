@@ -21,7 +21,7 @@ function NotFound() {
 
         <Link
           href="/privacy"
-          className="inline-block mt-6 rounded-lg px-6 py-3  hover:opacity-90"
+          className="inline-block mt-6 rounded-lg px-6 py-3 bg-blue-600 text-white hover:opacity-90"
         >
           Go to Privacy Policy
         </Link>
