@@ -21,6 +21,9 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-sm" style={{ color: "var(--text-faint)" }}>
             <a href="#features" className="hover:text-violet-500 transition-colors">Features</a>
             <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a>
+            <Link href="/beta" className="hover:text-violet-500 transition-colors">
+              Beta
+            </Link>
             <Link
               href="/whats-new"
               className="hover:text-violet-500 transition-colors flex items-center gap-1.5"

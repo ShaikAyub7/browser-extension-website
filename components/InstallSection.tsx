@@ -36,6 +36,12 @@ export default function InstallSection() {
             Add to Edge — It's Free
           </a>
 
+          <div className="mb-8">
+            <a href="/beta" className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors">
+              Want the testing build? Visit the beta download page →
+            </a>
+          </div>
+
           <p className="text-xs font-mono text-ink-400 mb-8">
             v3.4.6 · Edge & Chromium-based browsers · Manifest V3
           </p>

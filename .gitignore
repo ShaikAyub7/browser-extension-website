@@ -15,6 +15,5 @@
 .vscode
 *.sublime-project
 /build
-*.zip
 *.tar.gz
 *.bak

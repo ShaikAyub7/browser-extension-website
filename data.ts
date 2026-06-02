@@ -5,6 +5,7 @@ export const links = [
     { href: "/features",    label: "Features" },
     { href: "/how-it-works",label: "How it works" },
     { href: "/stats",       label: "Stats" },
+  { href: "/beta",        label: "Beta", badge: true },
     { href: "/whats-new",   label: "What's new", badge: true },
     { href: "/faq",         label: "FAQ" },
   ];
