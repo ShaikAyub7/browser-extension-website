@@ -59,7 +59,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="font-display font-semibold text-xl  mb-3">7. Contact</h2>
-            <p>Questions? Open an issue on our GitHub repository or contact us at <span className="text-violet-400">privacy@tab-time-tracker.vercel.app</span>.</p>
+            <p>Questions? Open an issue on our GitHub repository or contact us at <span className="text-violet-400">skayub929@gmail.com</span>.</p>
           </section>
         </div>
       </div>

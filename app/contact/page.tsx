@@ -25,12 +25,12 @@ export default function ContactPage() {
 
           <div className="grid gap-4">
             <a
-              href="mailto:privacy@tab-time-tracker.vercel.app?subject=Tab%20Time%20Tracker%20contact"
+              href="mailto:skayub929@gmail.com?subject=Tab%20Time%20Tracker%20contact"
               className="rounded-2xl border border-violet-100/70 bg-white/80 dark:bg-white/5 p-5 hover:border-violet-200 transition-colors"
             >
               <p className="text-xs uppercase tracking-[0.22em] font-semibold text-violet-500 mb-2">Email</p>
               <p className="font-display font-bold text-lg" style={{ color: "var(--text-heading)" }}>
-                privacy@tab-time-tracker.vercel.app
+                skayub929@gmail.com
               </p>
             </a>
 
