@@ -29,7 +29,6 @@ export default function DashboardUploader({
         onDragEnter={onDragEnter}
         onDragLeave={onDragLeave}
         onDragOver={(event) => event.preventDefault()}
-        onDrop={onDrop}
       >
         <input
           type="file"
