@@ -2,13 +2,14 @@ import { Users,Clock,Star,Lock, Apple, Brain, Moon, Trophy , Download, Settings,
 import { ChangeKind, Release, Stat } from "./types";
 
 export const links = [
+      { href: "/dashboard",   label: "Dashboard", badge: true },
     { href: "/features",    label: "Features" },
     { href: "/how-it-works",label: "How it works" },
     { href: "/stats",       label: "Stats" },
-    { href: "/dashboard",   label: "Dashboard", badge: true },
-  { href: "/beta",        label: "Beta", badge: true },
     { href: "/whats-new",   label: "What's new", badge: true },
     { href: "/faq",         label: "FAQ" },
+      { href: "/beta",        label: "Beta",  },
+
   ];
 
 export const SITES = [

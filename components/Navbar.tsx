@@ -76,7 +76,7 @@ export default function Navbar() {
           >
             Add to
             
-            
+    
             
              Edge — Free
           </a>
