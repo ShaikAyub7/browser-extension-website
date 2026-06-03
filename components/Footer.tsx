@@ -19,8 +19,8 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6 text-sm" style={{ color: "var(--text-faint)" }}>
-            <a href="#features" className="hover:text-violet-500 transition-colors">Features</a>
-            <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a>
+            {/* <a href="#features" className="hover:text-violet-500 transition-colors">Features</a>
+            <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a> */}
             {/* <Link href="/dashboard" className="hover:text-violet-500 transition-colors">
               Dashboard
             </Link> */}
