@@ -21,9 +21,9 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-sm" style={{ color: "var(--text-faint)" }}>
             <a href="#features" className="hover:text-violet-500 transition-colors">Features</a>
             <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a>
-            <Link href="/dashboard" className="hover:text-violet-500 transition-colors">
+            {/* <Link href="/dashboard" className="hover:text-violet-500 transition-colors">
               Dashboard
-            </Link>
+            </Link> */}
             <Link href="/about" className="hover:text-violet-500 transition-colors">
               About
             </Link>
@@ -33,16 +33,16 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-violet-500 transition-colors">
               Terms
             </Link>
-            <Link href="/beta" className="hover:text-violet-500 transition-colors">
+            {/* <Link href="/beta" className="hover:text-violet-500 transition-colors">
               Beta
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="/whats-new"
               className="hover:text-violet-500 transition-colors flex items-center gap-1.5"
             >
               What&apos;s new
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
-            </Link>
+            </Link> */}
             <a
               href="https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe"
               target="_blank"

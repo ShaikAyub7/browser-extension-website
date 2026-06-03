@@ -8,7 +8,7 @@ export const links = [
     { href: "/stats",       label: "Stats" },
     { href: "/whats-new",   label: "What's new", badge: true },
     { href: "/faq",         label: "FAQ" },
-      { href: "/beta",        label: "Beta",  },
+      // { href: "/beta",        label: "Beta",  },
 
   ];
 
