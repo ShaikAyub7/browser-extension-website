@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import OnboardingModal from "./OnboardingModal";
 
 export default function InstallSection() {
   const ref = useRef<HTMLDivElement>(null);
+  const [showOnboard, setShowOnboard] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
@@ -36,6 +38,12 @@ export default function InstallSection() {
             Add to Edge — It's Free
           </a>
 
+          <div className="mb-6">
+            <button onClick={() => setShowOnboard(true)} className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors">
+              Guided install & onboarding →
+            </button>
+          </div>
+
           <div className="mb-8">
             <a href="/beta" className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors">
               Want the testing build? Visit the beta download page →
@@ -60,6 +68,7 @@ export default function InstallSection() {
           </div>
         </div>
       </div>
+          <OnboardingModal open={showOnboard} onClose={() => setShowOnboard(false)} />
     </section>
   );
 }
