@@ -335,6 +335,57 @@ body {
 }
 .animate-pulse-glow { animation: pulseGlow 3.5s ease-in-out infinite; }
 
+/* Motion polish */
+.animated-gradient-line {
+  background: linear-gradient(90deg, transparent, #7c3aed, #10b981, #f97316, transparent);
+  background-size: 240% 100%;
+  animation: shimmerLine 4s linear infinite;
+}
+@keyframes shimmerLine {
+  0% { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
+}
+
+.command-panel::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: 29px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(16,185,129,0.18), rgba(249,115,22,0.18));
+  filter: blur(22px);
+  opacity: 0.65;
+  animation: pulseGlow 4.5s ease-in-out infinite;
+}
+
+.scan-line {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.22) 42%, transparent 58%);
+  transform: translateX(-120%);
+  animation: scanAcross 4s ease-in-out infinite;
+}
+@keyframes scanAcross {
+  0%, 35% { transform: translateX(-120%); }
+  70%, 100% { transform: translateX(120%); }
+}
+
+.focus-ring {
+  background:
+    conic-gradient(from 0deg, #7c3aed 0deg, #7c3aed 295deg, var(--bg-muted) 295deg, var(--bg-muted) 360deg);
+  animation: focusRingSpin 8s linear infinite;
+}
+@keyframes focusRingSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.focus-ring > * { animation: focusRingCounter 8s linear infinite; }
+@keyframes focusRingCounter {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
 /* Theme transition smooth */
 *, *::before, *::after {
   transition-property: background-color, border-color, box-shadow, color;
@@ -343,6 +394,6 @@ body {
 }
 /* But keep animation/transform snappy */
 .btn-primary, .feature-card, .heatmap-cell, .reveal,
-.animate-float-slow, .animate-float-fast, .animate-pulse-glow {
+.animate-float-slow, .animate-float-fast, .animate-pulse-glow, .command-panel, .focus-ring {
   transition-property: transform, opacity, box-shadow, border-color;
 }

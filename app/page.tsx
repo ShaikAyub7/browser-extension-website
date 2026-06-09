@@ -13,6 +13,7 @@ import ChangelogStrip from "@/components/Changelogstrip";
 import ScrollUtilities from "@/components/Scrollutilities";
 import AnnouncementBanner from "@/components/Announcementbanner";
 import NewsletterSection from "@/components/Newslettersection";
+import FocusCommandCenter from "@/components/FocusCommandCenter";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <HeroSection />
         {/* <AnnouncementBanner/> */}
         <FeaturesSection />
+        <FocusCommandCenter />
         <LiveDemo />
         <ChangelogStrip/>
         <HowItWorks />
