@@ -10,8 +10,17 @@ export interface Stat {
 }
 
 export interface Release {
-  version: string; date: string; tag?: "latest"|"major"|"hotfix"|"comingSoon";
-  headline: string; summary: string; changes: Change[]; highlight?: string;
+  version: string; 
+  date: string; 
+  tag?: "latest"|"major"|"hotfix"|"comingSoon";
+  headline: string; 
+  summary: string; 
+  changes: Change[]; 
+  highlight?: string;
 }
 export type ChangeKind = "new"|"improved"|"fixed"|"removed"|"security";
-export interface Change { kind: ChangeKind; text: string; }
+
+export interface Change { 
+  kind: ChangeKind;
+   text: string; 
+  }

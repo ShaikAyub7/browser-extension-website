@@ -68,7 +68,6 @@ export default function ProductivityQuiz() {
 
           {step >= 1 && step <= 5 && q && (
             <div>
-              {/* Progress */}
               <div className="flex gap-1 mb-8 justify-center">
                 {QUESTIONS.map((_, i) => (
                   <div

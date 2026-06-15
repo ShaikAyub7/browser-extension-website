@@ -38,12 +38,16 @@ export const FEATURES = [
   { icon:"🏆", title:"Streak & goals",         desc:"Build a daily streak by staying under your limit. Visual counter keeps you motivated and accountable.",           accent:"#FBBF24", bg:"#FFFBEB", tag:"Gamification" },
   { icon:"💾", title:"Export your data",       desc:"Download your full history as CSV or JSON. Your data stays local — never uploaded to any server.",               accent:"#14B8A6", bg:"#F0FDFA", tag:"Privacy"      },
 ];
+
+
 export const STATS: Stat[] = [
   { value:80, suffix:"+",  label:"Active users",          icon:Users , color:"#7C3AED", bg:"#F5F3FF" },
   { value:4.7,   suffix:"★",  label:"Edge Add-ons rating",icon:Star, color:"#F59E0B", bg:"#FFFBEB" },
   { value:100,   suffix:"+", label:"Hours tracked daily",   icon:Clock , color:"#3B82F6", bg:"#EFF6FF" },
   { value:100,   suffix:"%",  label:"Private — no server",   icon:Lock, color:"#10B981", bg:"#ECFDF5" },
 ];
+
+
 export const TESTIMONIALS = [
   { name:"Alex K.",  handle:"@alexk_dev",    avatar:"AK", text:"I had no idea I was spending 3 hours a day on YouTube until Tab Time Tracker showed me. Changed my habits in a week.", stars:5, color:"#7C3AED", bg:"#F5F3FF" },
   { name:"Sarah M.", handle:"@sarahm_ux",    avatar:"SM", text:"The Pomodoro + site blocking combo is *chef's kiss*. Finally a focus tool that actually blocks the sites I tell it to.", stars:5, color:"#3B82F6", bg:"#EFF6FF" },
@@ -273,6 +277,8 @@ export const DEMO_SITES = [
   { name: "reddit.com", emoji: ToyBrick, color: "#F97316", time: 38, limit: 60 },
   { name: "figma.com", emoji: Figma, color: "#8B5CF6", time: 22, limit: 120 },
 ];
+
+
 export const UPDATES = [
   {
     version: "3.4.6",

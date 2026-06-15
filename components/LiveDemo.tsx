@@ -102,7 +102,6 @@ export default function LiveDemo() {
               boxShadow: "0 20px 60px rgba(124,58,237,0.18)",
             }}
           >
-            {/* Header */}
             <div className="px-5 pt-5 pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-1">
@@ -120,7 +119,6 @@ export default function LiveDemo() {
                 </div>
               </div>
 
-              {/* Tabs */}
               <div className="flex gap-1">
                 {(["summary", "analytics", "focus"] as const).map((t) => (
                   <button

@@ -39,7 +39,6 @@ export default function ChangelogStrip() {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
           <div
             className="absolute left-[22px] top-4 bottom-4 w-px hidden md:block"
             style={{ background: "linear-gradient(180deg, #7C3AED, transparent)" }}
@@ -52,7 +51,6 @@ export default function ChangelogStrip() {
                 key={u.version}
                 className={`reveal reveal-delay-${i + 1} flex gap-6 items-start`}
               >
-                {/* Dot */}
                 <div
                   className="hidden md:flex w-11 h-11 rounded-xl items-center justify-center text-lg flex-shrink-0 relative z-10"
                   style={{ background: u.badgeBg, border: `1px solid ${u.badgeColor}30` }}
@@ -60,7 +58,6 @@ export default function ChangelogStrip() {
                     <Icon className="w-5 h-5" style={{ color: u.badgeColor }} />
                 </div>
 
-                {/* Card */}
                 <div
                   className="flex-1 rounded-2xl p-6 transition-all hover:translate-y-[-2px]"
                   style={{

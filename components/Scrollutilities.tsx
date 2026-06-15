@@ -19,7 +19,6 @@ export default function ScrollUtilities() {
 
   return (
     <>
-      {/* Reading progress bar */}
       <div
         className="fixed top-0 left-0 z-[60] h-0.5 transition-all duration-100"
         style={{
@@ -29,7 +28,6 @@ export default function ScrollUtilities() {
         aria-hidden
       />
 
-      {/* Scroll to top button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Scroll to top"

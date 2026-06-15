@@ -61,7 +61,6 @@ export default function TipsSection() {
           </p>
         </div>
 
-        {/* Dots */}
         <div className="flex justify-center gap-2 mt-6">
           {TIPS.map((_, i) => (
             <button

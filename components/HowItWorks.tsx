@@ -35,7 +35,6 @@ export default function HowItWorks() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Steps */}
           <div className="space-y-3 reveal reveal-delay-1">
             {STEPS.map((s, i) => {
               const Icon = s.icon;

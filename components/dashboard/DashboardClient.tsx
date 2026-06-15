@@ -18,20 +18,6 @@ type DashboardData = {
   note: string;
 };
 
-// const demoData: DashboardData = {
-//   sourceName: "Demo dashboard",
-//   importedAt: "Preview data",
-//   totalMinutes: 546,
-//   activeDays: 7,
-//   topSites: [
-//     { site: "youtube.com", minutes: 138 },
-//     { site: "github.com", minutes: 92 },
-//     { site: "twitter.com", minutes: 74 },
-//     { site: "figma.com", minutes: 61 },
-//     { site: "reddit.com", minutes: 48 },
-//   ],
-//   note: "Upload a JSON or CSV export to replace the demo preview with real data.",
-// };
 
 function formatMinutes(minutes: number) {
   const totalSeconds = Math.max(0, Math.round(minutes * 60));
@@ -383,12 +369,7 @@ const [dashboard, setDashboard] =
         icon: Database,
         note: `${formatMinutes(topSite.minutes)} tracked on the highest-usage site`,
       },
-        //   {
-        //     title: "Upload new data",
-        //     value: topSite.site,
-        //     icon: Database,
-        //     note: `${formatMinutes(topSite.minutes)} tracked on the highest-usage site`,
-        //   },
+        
     ],
     [averagePerDay, dashboard.activeDays, dashboard.totalMinutes, topSite.minutes, topSite.site]
   );
@@ -578,7 +559,6 @@ const [dashboard, setDashboard] =
       key={site.site}
       className="rounded-2xl border border-violet-100/70 bg-white/75 dark:bg-white/5 p-4"
     >
-      {/* Header */}
       <div className="flex items-center justify-between gap-4 mb-3">
         <div className="flex items-center gap-3 min-w-0">
           <img
@@ -603,7 +583,6 @@ const [dashboard, setDashboard] =
         </span>
       </div>
 
-      {/* Progress Bar */}
       <div className="h-2 rounded-full bg-violet-100/70 overflow-hidden">
         <div
           className="h-full rounded-full bg-gradient-to-r from-violet-500 to-sky-500 transition-all duration-500"
