@@ -213,8 +213,6 @@ export const TIPS = [
 ];
 
 
-
-
 export const QUESTIONS = [
   {
     q: "How many hours do you spend browsing per day?",
