@@ -597,10 +597,6 @@ const [dashboard, setDashboard] =
         </section>
         </>
         }
-   
-
-       
-
         <section className="glass rounded-[2rem] p-7">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-2xl flex items-center justify-center" style={{ background: "var(--pill-bg)", color: "var(--pill-color)" }}>
@@ -622,13 +618,13 @@ const [dashboard, setDashboard] =
                 JSON
               </p>
               <pre className="overflow-auto text-xs leading-relaxed whitespace-pre-wrap" style={{ color: "var(--text-muted)" }}>
-{`{
-  "activeDays": 7,
-  "topSites": [
-    { "site": "youtube.com", "minutes": 138 },
-    { "site": "github.com", "minutes": 92 }
-  ]
-}`}
+                    {`{
+                      "activeDays": 7,
+                      "topSites": [
+                        { "site": "youtube.com", "minutes": 138 },
+                        { "site": "github.com", "minutes": 92 }
+                      ]
+                    }`}
               </pre>
             </div>
 
@@ -637,10 +633,10 @@ const [dashboard, setDashboard] =
                 CSV
               </p>
               <pre className="overflow-auto text-xs leading-relaxed whitespace-pre-wrap" style={{ color: "var(--text-muted)" }}>
-{`site,minutes
-youtube.com,138
-github.com,92
-twitter.com,74`}
+                  {`site,minutes
+                  youtube.com,138
+                  github.com,92
+                  twitter.com,74`}
               </pre>
             </div>
           </div>

@@ -12,7 +12,7 @@ export interface Stat {
 export interface Release {
   version: string; 
   date: string; 
-  tag?: "latest"|"major"|"hotfix"|"comingSoon";
+  tag?: "latest"|"major"|"hotfix"|"comingSoon"|"failed";
   headline: string; 
   summary: string; 
   changes: Change[]; 

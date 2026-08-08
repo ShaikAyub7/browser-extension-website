@@ -1,5 +1,6 @@
 import { Users,Clock,Star,Lock, Apple, Brain, Moon, Trophy , Download, Settings, Globe, BarChart, Lightbulb, Figma, Github, Twitter, Youtube, Calendar, User, ShieldEllipsis, TestTube2, ToyBrick } from "lucide-react";
 import { ChangeKind, Release, Stat } from "./types";
+import { MousePointerClick } from "lucide-react";
 
 export const links = [
       { href: "/dashboard",   label: "Dashboard", badge: true },
@@ -71,23 +72,25 @@ export const FAQS = [
 
 export const RELEASES: Release[] = [
   {
-    version:"3.4.6", date:"May 28 2026", tag:"comingSoon",
-    
-    headline:"Smarter AI suggestions & streak shields",
-    summary:"This release polishes the AI assistant, adds a streak-shield consumable so one bad day doesn't break your chain, and fixes a handful of timezone edge-cases.",
-    highlight:"Streak Shield",
-    changes:[
-      {kind:"new",     text:"Streak Shield: earn one shield every 7 days. Activate it to protect your streak when life happens."},
-      {kind:"new",     text:"AI assistant now suggests personalised daily limits based on your 14-day average."},
-      {kind:"improved",text:"AI prompt context now includes hourly breakdown, making suggestions significantly more accurate."},
-      {kind:"improved",text:"Heatmap tooltip now shows exact minutes instead of a generic intensity label."},
-      {kind:"fixed",   text:"Timezone bug that caused midnight reset to fire 1 hour early in GMT+5:30 (IST) regions."},
-      {kind:"fixed",   text:"Focus mode occasionally failed to redirect already-open tabs — now blocked on activation."},
-      {kind:"fixed",   text:"Streak counter showed incorrect value after manual date change in system clock."},
+    version: "4.0.0", date: "Aug 08 2026", tag: "major",
+
+    headline: "AI Assistant retired — meet Cursor Time Alert",
+    summary: "Based on user feedback, we've pulled the AI Assistant and the Rewards/gamification system out of the extension entirely, simplified Appearance down to a plain dark/light toggle, and shipped a new always-on feature that doesn't need an API key: your cursor now warns you directly as you approach a limit.",
+    highlight: "Cursor Time Alert",
+    changes: [
+      {kind:"new",     text:"Cursor Time Alert: your cursor glows red and blinks faster as a site or your daily limit gets close — so you notice even when you've drifted off task."},
+      {kind:"removed", text:"AI Assistant tab removed, along with all Anthropic-API-key-based chat and insight features."},
+      {kind:"removed", text:"Rewards tab removed — badges, XP, and streak-as-a-game mechanics are gone."},
+      {kind:"removed", text:"Appearance panel (multi-theme, accent-color picker) removed and replaced with a simple dark/light mode toggle."},
+      {kind:"removed", text:"Dashboard Widgets configuration panel removed."},
+      {kind:"fixed",   text:"Popup was loading its script twice (a legacy duplicate include), which made settings toggles behave unpredictably."},
+      {kind:"fixed",   text:"Missing charset declaration was corrupting special characters (·, …, —) in the UI — replaced with plain text for reliability."},
+      {kind:"fixed",   text:"Notification icon pointed to a missing file and rendered blank."},
+      {kind:"improved",text:"Refreshed app icon and added Web Store promotional tile images."},
     ],
   },
   {
-    version:"3.4.0", date:"Apr 14 2026", tag:"major",
+    version:"3.4.0", date:"Apr 14 2026", tag:"failed",
     headline:"AI Assistant — chat with your data",
     summary:"The biggest release since v3.0. Tab Time Tracker now ships with a built-in AI chat panel powered by the Anthropic API. Ask it anything about your habits and get actionable advice.",
     highlight:"AI Assistant",
@@ -190,11 +193,12 @@ export const KIND_CONFIG: Record<ChangeKind,{label:string;color:string;bg:string
   security: {label:"Security", color:"#8B5CF6",bg:"#F5F3FF",border:"#DDD6FE",icon:"⚠"},
 };
 
-export const TAG_CONFIG: Record<"latest"|"major"|"hotfix"|"comingSoon",{label:string;color:string;bg:string;border:string}> = {
+export const TAG_CONFIG: Record<"latest"|"major"|"hotfix"|"comingSoon"|"failed",{label:string;color:string;bg:string;border:string}> = {
   latest:  {label:"Latest",  color:"#10B981",bg:"#ECFDF5",border:"#A7F3D0"},
   major:   {label:"Major",   color:"#7C3AED",bg:"#F5F3FF",border:"#DDD6FE"},
   hotfix:  {label:"Hotfix",  color:"#F97316",bg:"#FFF7ED",border:"#FED7AA"},
   comingSoon: {label:"Coming Soon", color:"#10B981",bg:"#F9FAFB",border:"#A7F3D0"},
+  failed: {label:"Failed", color:"#EF4444",bg:"#FEF2F2",border:"#FECACA"},
 };
 
 export const TIPS = [
@@ -278,47 +282,47 @@ export const DEMO_SITES = [
   { name: "figma.com", emoji: Figma, color: "#8B5CF6", time: 22, limit: 120 },
 ];
 
-
 export const UPDATES = [
   {
-    version: "3.4.6",
-    date: "May 28 2026",
+    version: "4.0.0",
+    date: "Aug 08 2026",
     badge: "latest",
     badgeColor: "#10B981",
     badgeBg: "rgba(16,185,129,0.12)",
-    icon: ShieldEllipsis,
-    title: "Streak Shield + smarter AI suggestions",
+    icon: MousePointerClick,
+    title: "AI Assistant retired — meet Cursor Time Alert",
     items: [
-      "Earn a Streak Shield every 7 days — use it to protect your chain",
-      "AI now suggests personalized limits from your 14-day average",
-      "Fixed GMT+5:30 timezone midnight-reset bug",
-    ],
-  },
-  {
-    version: "3.4.0",
-    date: "Apr 14 2026",
-    badge: "major",
-    badgeColor: "#7C3AED",
-    badgeBg: "rgba(124,58,237,0.12)",
-    icon: User,
-    title: "AI Assistant — chat with your data",
-    items: [
-      "Natural language chat about your browsing habits",
-      "Analytics tab redesigned with 7-day, 30-day & all-time views",
+      "Your cursor glows and blinks red as a limit gets close",
+      "AI Assistant, Rewards, and multi-theme Appearance removed",
+      "Fixed a bug that made settings toggles behave unpredictably",
     ],
   },
   {
     version: "3.3.0",
-    date: "Feb 22 2026",
+    date: "Feb 17 2026",
     badge: "feature",
     badgeColor: "#3B82F6",
     badgeBg: "rgba(59,130,246,0.12)",
-    icon:Calendar,
+    icon: Calendar,
     title: "Scheduled work limits",
     items: [
       "Stricter site limits during work hours (9–5 default, configurable)",
       "Different caps for work vs leisure time windows",
-      "Heatmap now shows 35 days with hover tooltips",
+      "Block list now supports wildcard patterns",
+    ],
+  },
+  {
+    version: "3.1.0",
+    date: "Nov 30 2025",
+    badge: "feature",
+    badgeColor: "#F59E0B",
+    badgeBg: "rgba(245,158,11,0.12)",
+    icon: Calendar,
+    title: "35-day activity heatmap",
+    items: [
+      "GitHub-style heatmap of your browsing intensity",
+      "Streak counter visible in the popup header",
+      "Hover any day to see exact time tracked",
     ],
   },
 ];

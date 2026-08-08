@@ -17,7 +17,7 @@ function ChangeBadge({kind}:{kind:ChangeKind}) {
   );
 }
 
-function VersionTag({tag}:{tag:"latest"|"major"|"hotfix"|"comingSoon"}) {
+function VersionTag({tag}:{tag:"latest"|"major"|"hotfix"|"comingSoon"|"failed"}) {
   const c = TAG_CONFIG[tag];
   return (
     <span className="inline-block text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border uppercase tracking-widest"
