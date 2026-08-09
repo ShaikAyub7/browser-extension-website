@@ -60,6 +60,7 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   { q:"Is Tab Time Tracker really free?",           a:"Yes — completely free, no premium tier, no subscription. The extension will always be free." },
+  
   { q:"Does it send my data to any server?",        a:"No. All data is stored in Browser's local storage. Nothing leaves your browser." },
   { q:"Will it slow down my browser?",              a:"No. Tracking runs in a lightweight service worker — no measurable performance impact." },
   { q:"What permissions does it need?",             a:"storage, activeTab, tabs, notifications, alarms, and scripting for focus mode blocking. It does NOT request broad host permissions beyond what the content script needs." },
@@ -79,6 +80,7 @@ export const RELEASES: Release[] = [
     highlight: "Cursor Time Alert",
     changes: [
       {kind:"new",     text:"Cursor Time Alert: your cursor glows red and blinks faster as a site or your daily limit gets close — so you notice even when you've drifted off task."},
+      {kind:"removed", text:"Sign-in/sign-up screen removed. Tab Time Tracker has never required an account and never will — everything stays local, by design."},
       {kind:"removed", text:"AI Assistant tab removed, along with all Anthropic-API-key-based chat and insight features."},
       {kind:"removed", text:"Rewards tab removed — badges, XP, and streak-as-a-game mechanics are gone."},
       {kind:"removed", text:"Appearance panel (multi-theme, accent-color picker) removed and replaced with a simple dark/light mode toggle."},
