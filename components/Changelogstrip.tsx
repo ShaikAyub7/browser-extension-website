@@ -82,11 +82,9 @@ export default function ChangelogStrip() {
                       {u.date}
                     </span>
                   </div>
-
                   <h3 className="font-display font-bold text-base mb-3" style={{ color: "var(--text-heading)" }}>
                     {u.title}
                   </h3>
-
                   <ul className="space-y-1.5">
                     {u.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-body)" }}>
