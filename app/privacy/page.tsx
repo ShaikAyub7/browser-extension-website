@@ -33,7 +33,7 @@ export default function PrivacyPage() {
               <li>Pomodoro session history</li>
               <li>Streak counters</li>
             </ul>
-            <p className="mt-3"><strong className="">None of this data is ever transmitted to our servers</strong>, because we have no servers. The extension makes no network requests except when you use the optional AI chat feature (which calls the Anthropic API using your own API key).</p>
+            <p className="mt-3"><strong className="">None of this data is ever transmitted to our servers</strong>, because we have no servers. The extension makes no network requests of any kind.</p>
           </section>
 
           <section>
