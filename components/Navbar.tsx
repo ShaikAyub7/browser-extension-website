@@ -74,11 +74,7 @@ export default function Navbar() {
             href="https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe"
             className="btn-primary px-5 py-2.5 rounded-xl text-sm font-bold font-display"
           >
-            Add to
-            
-    
-            
-             Edge — Free
+            Add to Edge — Free
           </a>
         </div>
 
