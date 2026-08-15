@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next"
 import FeedbackWidget from "@/components/FeedbackWidget";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Tab Time Tracker — Know Where Your Time Goes",
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <FeedbackWidget />
         <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
