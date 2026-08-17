@@ -11,7 +11,6 @@ import InstallSection from "@/components/InstallSection";
 import Footer from "@/components/Footer";
 import ChangelogStrip from "@/components/Changelogstrip";
 import ScrollUtilities from "@/components/Scrollutilities";
-import AnnouncementBanner from "@/components/Announcementbanner";
 import NewsletterSection from "@/components/Newslettersection";
 import FocusCommandCenter from "@/components/FocusCommandCenter";
 
@@ -23,7 +22,7 @@ export default function Home() {
         <FeaturesSection />
         <FocusCommandCenter />
         <LiveDemo />
-        <ChangelogStrip/>
+        <ChangelogStrip />
         <HowItWorks />
         <StatsSection />
         <ProductivityQuiz />
@@ -31,8 +30,8 @@ export default function Home() {
         <TipsSection />
         <FAQSection />
         <InstallSection />
-        <ScrollUtilities/>
-        <NewsletterSection/>
+        <ScrollUtilities />
+        <NewsletterSection />
       </main>
       <Footer />
     </>

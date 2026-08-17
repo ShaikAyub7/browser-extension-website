@@ -1,7 +1,13 @@
 "use client";
 import { useState } from "react";
 
-export default function OnboardingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+export default function OnboardingModal({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
   const [step, setStep] = useState(0);
   const steps = [
     {
@@ -30,20 +36,33 @@ export default function OnboardingModal({ open, onClose }: { open: boolean; onCl
       <div className="bg-white dark:bg-[#0b0620] rounded-2xl shadow-2xl p-6 w-[92%] max-w-lg z-10">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-xl font-display font-extrabold mb-1" style={{ color: "var(--text-heading)" }}>
+            <h3
+              className="text-xl font-display font-extrabold mb-1"
+              style={{ color: "var(--text-heading)" }}
+            >
               {steps[step].title}
             </h3>
-            <p className="text-sm" style={{ color: "var(--text-muted)" }}>{steps[step].desc}</p>
+            <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+              {steps[step].desc}
+            </p>
           </div>
-          <button onClick={onClose} aria-label="Close" className="text-sm font-medium text-violet-600">Close</button>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="text-sm font-medium text-violet-600"
+          >
+            Close
+          </button>
         </div>
 
         <div className="mt-6">
           <div className="h-40 rounded-md bg-gray-50 dark:bg-[#071022] border border-dashed flex items-center justify-center text-sm text-gray-500">
-            {/* Placeholder visual for each step */}
             <div className="p-4 text-center">
               <div className="mb-2 font-semibold">Step {step + 1} visual</div>
-              <div className="text-xs">(This is a lightweight guided demo — replace with screenshots or short gifs.)</div>
+              <div className="text-xs">
+                (This is a lightweight guided demo — replace with screenshots or
+                short gifs.)
+              </div>
             </div>
           </div>
 
@@ -57,7 +76,10 @@ export default function OnboardingModal({ open, onClose }: { open: boolean; onCl
             </button>
             <div className="flex gap-1 items-center">
               {steps.map((_, i) => (
-                <div key={i} className={`w-2 h-2 rounded-full ${i === step ? "bg-violet-600" : "bg-gray-300"}`}></div>
+                <div
+                  key={i}
+                  className={`w-2 h-2 rounded-full ${i === step ? "bg-violet-600" : "bg-gray-300"}`}
+                ></div>
               ))}
             </div>
             <button

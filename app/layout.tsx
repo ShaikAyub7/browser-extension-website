@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
-import FeedbackWidget from "@/components/FeedbackWidget";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Tab Time Tracker — Know Where Your Time Goes",
-
   description:
     "Monitor your daily browsing habits, set per-site limits, block distractions with Pomodoro focus sessions, and get AI-powered insights. Free Chrome extension.",
   keywords:
@@ -60,8 +58,6 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        {/* <DisableInspect /> */}
-        <FeedbackWidget />
         <Analytics />
         <SpeedInsights />
       </body>

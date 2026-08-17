@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function AnnouncementBanner() {
-
-  
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -35,8 +33,12 @@ export default function AnnouncementBanner() {
     >
       <span className="text-base">🎉</span>
       <span>
-        <strong>v3.4.6 is live</strong> — Streak Shield &amp; smarter AI now available.{" "}
-        <Link href="/whats-new" className="underline underline-offset-2 opacity-90 hover:opacity-100 font-bold">
+        <strong>v3.4.6 is live</strong> — Streak Shield &amp; smarter AI now
+        available.{" "}
+        <Link
+          href="/whats-new"
+          className="underline underline-offset-2 opacity-90 hover:opacity-100 font-bold"
+        >
           See what&apos;s new →
         </Link>
       </span>
@@ -46,7 +48,12 @@ export default function AnnouncementBanner() {
         className="ml-auto p-1 rounded-full opacity-70 hover:opacity-100 transition-opacity flex-shrink-0"
       >
         <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-          <path d="M4 4l8 8M12 4l-8 8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+          <path
+            d="M4 4l8 8M12 4l-8 8"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
         </svg>
       </button>
     </div>
