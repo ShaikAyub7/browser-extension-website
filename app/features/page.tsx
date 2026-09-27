@@ -1,13 +1,12 @@
-import FeaturesSection from '@/components/FeaturesSection'
-import React from 'react'
+import FeaturesSection from "@/components/FeaturesSection";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-
-    <FeaturesSection/>
+      <FeaturesSection />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
