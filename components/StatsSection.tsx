@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 
 const HEAT_LEVELS = [0,1,2,3,4,3,2,4,1,0,3,4,2,1,3,4,0,2,3,1,4,2,3,0,1,3,4,2,1,0,3,2,4,1,3];
-const HEAT_COLORS = ["#E4E2F0","#D3C0FF","#B39DFF","#9B6EFF","#7C3AED"];
+const HEAT_COLORS = ["#E8E3E0","#F8C4C8","#F59AA1","#F0525E","#E11D2E"];
 
 function useCountUp(target: number, decimals = 0, active: boolean) {
   const [val, setVal] = useState(0);
@@ -110,7 +110,7 @@ export default function StatsSection() {
             <div className="flex-1 space-y-3">
               {[
                 { label:"Productive",  pct:48, color:"#10B981" },
-                { label:"Neutral",     pct:24, color:"#6366F1" },
+                { label:"Neutral",     pct:24, color:"#FF5A64" },
                 { label:"Distracting", pct:28, color:"#EF4444" },
               ].map((b) => (
                 <div key={b.label}>

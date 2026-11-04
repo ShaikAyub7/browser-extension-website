@@ -1,224 +1,58 @@
 "use client";
-import { SITES } from "@/data";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import AnnouncementBanner from "./Announcementbanner";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Timer, ShieldBan, BarChart3 } from "lucide-react";
 
-function MockPopup() {
-  const [activeBar, setActiveBar] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setActiveBar((p) => (p + 1) % SITES.length), 1800);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <div
-      className="rounded-2xl p-5 w-[320px] select-none"
-      style={{
-        background: "var(--card-bg)",
-        border: "1px solid var(--border)",
-        boxShadow: "0 20px 60px rgba(60,40,120,0.18)",
-      }}
-    >
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center">
-            <Image src="/image.png" alt="TabTime Logo" width={16} height={16} />
-          </div>
-          <span className="font-display font-bold text-sm" style={{ color: "var(--text-heading)" }}>
-            Tab Time Tracker
-          </span>
-        </div>
-        <div className="flex gap-1">
-          {["Summary", "Analytics", "Focus"].map((t, i) => (
-            <span
-              key={t}
-              className="text-[9px] px-2 py-0.5 rounded-full font-semibold transition-all"
-              style={{
-                background: i === 0 ? "#7C3AED" : "var(--bg-muted)",
-                color: i === 0 ? "#fff" : "var(--text-muted)",
-              }}
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "var(--text-faint)" }}>
-            Today
-          </p>
-          <p className="font-display font-extrabold text-3xl mt-0.5" style={{ color: "var(--text-heading)" }}>
-            4h 38m
-          </p>
-        </div>
-        <svg viewBox="0 0 36 36" className="w-16 h-16">
-          <path
-            fill="none"
-            stroke="var(--border)"
-            strokeWidth="3"
-            d="M18 2.0845 a15.9155 15.9155 0 0 1 0 31.831 a15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <path
-            fill="none"
-            stroke="#7C3AED"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeDasharray="58,100"
-            d="M18 2.0845 a15.9155 15.9155 0 0 1 0 31.831 a15.9155 15.9155 0 0 1 0 -31.831"
-            style={{ filter: "drop-shadow(0 0 3px rgba(124,58,237,0.5))" }}
-          />
-          <text
-            x="18"
-            y="20.5"
-            textAnchor="middle"
-            fill="var(--text-body)"
-            style={{ fontSize: "8px", fontWeight: "700", fontFamily: "monospace" }}
-          >
-            58%
-          </text>
-        </svg>
-      </div>
-
-      <div className="space-y-2.5">
-        {SITES.map((s, i) => (
-          <div key={s.name} className={`transition-all duration-300 ${i === activeBar ? "opacity-100" : "opacity-60"}`}>
-            <div className="flex items-center justify-between mb-1">
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full" style={{ background: s.color }} />
-                <span className="text-[11px] font-medium" style={{ color: "var(--text-body)" }}>
-                  {s.name}
-                </span>
-              </div>
-              <span className="text-[11px] font-mono" style={{ color: "var(--text-faint)" }}>
-                {s.time}
-              </span>
-            </div>
-            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "var(--bg-muted)" }}>
-              <div
-                className="h-full rounded-full transition-all duration-700"
-                style={{ width: `${s.pct}%`, background: s.color, opacity: i === activeBar ? 1 : 0.5 }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-4 pt-3 flex items-center justify-between" style={{ borderTop: "1px solid var(--border)" }}>
-        <span className="text-[9px] font-mono" style={{ color: "var(--text-faint)" }}>5 domains tracked</span>
-        <div className="flex items-center gap-1">
-          <span className="text-[9px]">🔥</span>
-          <span className="text-[9px] font-bold text-orange-500">7 day streak</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function FloatingBadge({ children, className }: { children: React.ReactNode; className: string }) {
-  return (
-    <div
-      className={`rounded-xl px-3 py-2 text-xs font-semibold shadow-card ${className}`}
-      style={{
-        background: "var(--card-bg)",
-        border: "1px solid var(--border)",
-        color: "var(--text-body)",
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+const STORE = "https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe";
+const SITES = [["github.com", 78, "2h 14m"], ["youtube.com", 52, "1h 31m"], ["docs.google.com", 34, "58m"], ["reddit.com", 18, "31m"]] as const;
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* <AnnouncementBanner/> */}
-      <div className="absolute inset-0 bg-radial-violet pointer-events-none" />
-      <div className="absolute inset-0 dot-grid bg-dot-grid bg-[size:28px_28px] opacity-60 pointer-events-none" />
-      <div
-        className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-60 animate-pulse-glow pointer-events-none"
-        style={{ background: "var(--violet-100)" }}
-      />
-      <div
-        className="absolute bottom-1/4 left-1/3 w-56 h-56 rounded-full blur-3xl opacity-50 animate-pulse-glow pointer-events-none"
-        style={{ background: "var(--violet-50)", animationDelay: "1.5s" }}
-      />
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] orbit-ring pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[880px] h-[880px] orbit-ring-rev pointer-events-none" />
-
-      <div className="relative z-10 lg:min-w-[1340px] md:max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 items-center gap-16 xl:gap-24">
-        <div>
-          <div className="pill mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            v3.4.6 — Free Edge Extension
+    <section className="relative pt-32 pb-24 overflow-hidden section-base">
+      <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-7">
+          <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="pill inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono">
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse-glow" style={{ background: "var(--violet-500)" }} /> v4.0 · free · no sign-up
+          </motion.span>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}
+            className="mt-6 font-display font-extrabold tracking-tight leading-[0.95] text-5xl sm:text-7xl" style={{ color: "var(--text-heading)" }}>
+            Your tabs are <span className="font-serif italic font-normal" style={{ color: "var(--violet-500)" }}>stealing</span> your day.
+          </motion.h1>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-6 max-w-xl text-lg" style={{ color: "var(--text-muted)" }}>
+            See exactly where your browsing time goes, cap the sites that drain you, and lock in with Pomodoro focus sessions. Private by design.
+          </motion.p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a href={STORE} target="_blank" rel="noopener noreferrer" className="btn-primary px-7 py-3.5 rounded-2xl font-display font-bold flex items-center gap-2">Add to browser <ArrowUpRight size={18} /></a>
+            <a href="#features" className="btn-secondary px-7 py-3.5 rounded-2xl font-display font-bold">Explore features</a>
           </div>
-
-          <h1
-            className="font-display font-extrabold text-5xl lg:text-6xl xl:text-[68px] leading-[1.04] tracking-tight mb-6"
-            style={{ color: "var(--text-heading)" }}
-          >
-            Know where
-            <br />
-            <p className="font-serif italic gradient-text">your time </p>
-            really goes.
-          </h1>
-
-          <p className="text-lg leading-relaxed mb-8 max-w-md" style={{ color: "var(--text-muted)" }}>
-            Tab Time Tracker watches every browser tab so you don&apos;t have to. Real-time stats, daily limits, AI insights, and Pomodoro focus — all in one popup.
-          </p>
-
-          <div className="flex flex-wrap gap-3 mb-10">
-            <a href="#install" className="btn-primary px-7 py-3.5 rounded-2xl font-display font-bold text-base flex items-center gap-2.5">
-              Add to Edge — Free
-            </a>
-            <a href="#features" className="btn-secondary px-7 py-3.5 rounded-2xl font-display font-bold text-base">
-              See features →
-            </a>
-          </div>
-
-          <div className="flex flex-wrap gap-6">
-            {[
-              { n: "80+", label: "Active users" },
-              { n: "4.7★", label: "Edge Add-ons rating" },
-              { n: "100%", label: "Free forever" },
-            ].map((s) => (
-              <div key={s.label}>
-                <p className="font-display font-extrabold text-xl" style={{ color: "var(--text-heading)" }}>
-                  {s.n}
-                </p>
-                <p className="text-xs mt-0.5" style={{ color: "var(--text-faint)" }}>
-                  {s.label}
-                </p>
-              </div>
+          <dl className="mt-12 grid grid-cols-3 max-w-md gap-6 font-mono text-xs" style={{ color: "var(--text-muted)" }}>
+            {[["100%", "local data"], ["0", "accounts"], ["<1MB", "footprint"]].map(([a, b]) => (
+              <div key={b}><dt className="font-display text-2xl font-extrabold" style={{ color: "var(--text-heading)" }}>{a}</dt><dd>{b}</dd></div>
             ))}
-          </div>
+          </dl>
         </div>
 
-        <div className="relative flex justify-center">
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-64 h-64 rounded-full blur-3xl opacity-30" style={{ background: "var(--violet-200)" }} />
+        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 }} className="lg:col-span-5 animate-float-slow">
+          <div className="rounded-3xl p-6 shadow-hover" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+            <div className="flex items-center justify-between font-mono text-xs" style={{ color: "var(--text-muted)" }}><span>TODAY</span><span>Focus score 86</span></div>
+            <div className="mt-2 font-display text-5xl font-extrabold" style={{ color: "var(--text-heading)" }}>5h 12m</div>
+            <div className="mt-6 space-y-4">
+              {SITES.map(([s, w, t], i) => (
+                <div key={s}>
+                  <div className="flex justify-between text-sm" style={{ color: "var(--text-body)" }}><span>{s}</span><span className="font-mono">{t}</span></div>
+                  <div className="mt-1.5 h-2 rounded-full" style={{ background: "var(--bg-muted)" }}>
+                    <motion.div initial={{ width: 0 }} animate={{ width: `${w}%` }} transition={{ delay: 0.5 + i * 0.12, duration: 0.8 }} className="h-full rounded-full" style={{ background: "var(--violet-500)" }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 grid grid-cols-3 gap-2 text-xs font-mono">
+              {[[Timer, "Pomodoro"], [ShieldBan, "Blocking"], [BarChart3, "Reports"]].map(([Icon, l]: any) => (
+                <div key={l} className="pill rounded-xl py-2 flex items-center justify-center gap-1.5"><Icon size={13} />{l}</div>
+              ))}
+            </div>
           </div>
-
-          <FloatingBadge className="absolute -top-5 -left-2 animate-float-slow z-10">7 day streak!</FloatingBadge>
-          <FloatingBadge className="absolute -bottom-3 -left-6 animate-float-fast z-10">Daily limit: 6h</FloatingBadge>
-          <FloatingBadge className="absolute top-6 -right-4 animate-float-slow z-10">AI insights ready</FloatingBadge>
-          <FloatingBadge className="absolute bottom-10 -right-2 animate-float-fast z-10">Focus: 23:00 left</FloatingBadge>
-
-          <div className="relative animate-float-slow">
-            <MockPopup />
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs font-mono tracking-widest uppercase" style={{ color: "var(--text-faint)" }}>
-          Scroll
-        </span>
-        <div className="w-0.5 h-8 bg-gradient-to-b from-violet-400 to-transparent animate-pulse" />
+        </motion.div>
       </div>
     </section>
   );

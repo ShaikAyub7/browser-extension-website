@@ -1,63 +1,38 @@
 "use client";
-import { FEATURES } from "@/data";
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { BarChart3, BellRing, Brain, CalendarClock, Download, Flame, Lock, TimerReset } from "lucide-react";
+import { Timer, ShieldBan, BarChart3, Keyboard, MousePointerClick, LayoutDashboard, Lock, CalendarRange } from "lucide-react";
 
-const featureIcons = [BarChart3, BellRing, TimerReset, CalendarClock, BarChart3, Brain, Flame, Download];
-
+const F = [
+  { i: BarChart3, t: "Per-site analytics", d: "Daily, weekly and monthly breakdowns with a heatmap of your most distracted hours.", c: "md:col-span-2 md:row-span-2", big: true },
+  { i: Timer, t: "Pomodoro focus", d: "Timed sessions that auto-block your worst offenders.", c: "" },
+  { i: ShieldBan, t: "Site limits & quick-block", d: "Cap sites or right-click to block instantly.", c: "" },
+  { i: MousePointerClick, t: "Cursor time alerts", d: "A gentle nudge when a tab has had you for too long.", c: "" },
+  { i: Keyboard, t: "Keyboard shortcuts", d: "Start, pause and block without leaving the page.", c: "" },
+  { i: LayoutDashboard, t: "Full-page dashboard", d: "Trends, top sites and goals on one screen.", c: "md:col-span-2" },
+  { i: CalendarRange, t: "Weekly report", d: "A Monday-morning recap: wins, slips and streaks.", c: "" },
+  { i: Lock, t: "Private by design", d: "Data stays in your browser. No account, no tracking.", c: "" },
+];
 
 export default function FeaturesSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
-      { threshold: 0.08, rootMargin: "0px 0px -50px 0px" }
-    );
-    ref.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="features" ref={ref} className="relative py-28 px-6 section-tint">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 reveal">
-          <div className="pill mx-auto mb-5">✦ Everything you need</div>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl  leading-tight">
-            A full productivity stack,<br/>
-            <span className="font-serif italic gradient-text">inside one tiny popup.</span>
-          </h2>
-          <p className="mt-4 text-ink-500 text-lg max-w-xl mx-auto">
-            8 powerful features. Zero subscriptions. Completely private — all data lives in your browser.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {FEATURES.map((f, i) => {
-            const Icon = featureIcons[i] || Lock;
-            return (
-            <motion.div key={f.title}
-              className={`feature-card group relative overflow-hidden p-6 reveal reveal-delay-${(i % 4) + 1}`}
-              initial={{ opacity: 0, y: 28, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.22 }}
-              transition={{ duration: 0.45, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}>
-              <div className="absolute inset-x-0 top-0 h-px opacity-0 group-hover:opacity-100 transition-opacity animated-gradient-line" />
-              <div
-                className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl"
-                style={{ background: `${f.accent}14`, color: f.accent }}
-              >
-                <Icon className="h-5 w-5" />
+    <section id="features" className="py-24 section-tint">
+      <div className="max-w-7xl mx-auto px-6">
+        <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--violet-500)" }}>Features</p>
+        <h2 className="mt-3 font-display font-extrabold text-4xl sm:text-6xl tracking-tight max-w-2xl" style={{ color: "var(--text-heading)" }}>
+          Everything you need. <span className="font-serif italic font-normal">Nothing you don’t.</span>
+        </h2>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(170px,auto)] gap-4">
+          {F.map(({ i: Icon, t, d, c, big }, n) => (
+            <motion.div key={t} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: n * 0.05 }}
+              className={`feature-card rounded-3xl p-6 flex flex-col justify-between ${c}`}
+              style={big ? { background: "var(--violet-500)", color: "#fff", border: "none" } : undefined}>
+              <Icon size={big ? 34 : 24} style={{ color: big ? "#fff" : "var(--violet-500)" }} />
+              <div>
+                <h3 className={`font-display font-bold ${big ? "text-3xl" : "text-lg"}`} style={big ? undefined : { color: "var(--text-heading)" }}>{t}</h3>
+                <p className="mt-2 text-sm" style={{ color: big ? "rgba(255,255,255,.85)" : "var(--text-muted)" }}>{d}</p>
               </div>
-              <span className="inline-block text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full mb-3 border"
-                style={{color:f.accent,background:`${f.accent}12`,borderColor:`${f.accent}28`}}>
-                {f.tag}
-              </span>
-              <h3 className="font-display font-bold  text-[15px] mb-2">{f.title}</h3>
-              <p className="text-ink-500 text-sm leading-relaxed">{f.desc}</p>
             </motion.div>
-          )})}
+          ))}
         </div>
       </div>
     </section>

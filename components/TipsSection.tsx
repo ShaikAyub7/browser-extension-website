@@ -70,7 +70,7 @@ export default function TipsSection() {
               style={{
                 width: i === current ? "24px" : "8px",
                 height: "8px",
-                background: i === current ? "#7C3AED" : "var(--border-soft)",
+                background: i === current ? "#E11D2E" : "var(--border-soft)",
               }}
               aria-label={`Tip ${i + 1}`}
             />

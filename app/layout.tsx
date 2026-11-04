@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import CommandPalette from "@/components/CommandPalette";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
         style={{ background: "var(--bg)" }}
       >
         <Navbar />
+        <CommandPalette />
         {children}
         <Analytics />
         <SpeedInsights />

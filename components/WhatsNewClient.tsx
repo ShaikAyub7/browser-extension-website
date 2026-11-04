@@ -56,8 +56,8 @@ function ReleaseCard({release,index}:{release:Release;index:number}) {
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-200 via-violet-100 to-transparent -translate-x-1/2"/>
         <div className="absolute top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 transition-all"
           style={isLatest
-            ? {background:"#7C3AED",borderColor:"#C4B5FD",boxShadow:"0 0 10px rgba(124,58,237,0.4)"}
-            : {background:"#E4E2F0",borderColor:"#CCC8E0"}}/>
+            ? {background:"#E11D2E",borderColor:"#FFB3B9",boxShadow:"0 0 10px rgba(225,29,46,0.4)"}
+            : {background:"#E8E3E0",borderColor:"#CFC8C4"}}/>
       </div>
 
       <div className={`bg-white rounded-2xl p-6 md:p-8 relative overflow-hidden feature-card border ${
@@ -95,7 +95,7 @@ function StatStrip() {
   return (
     <div className="flex flex-wrap justify-center gap-4 mb-14">
       {[
-        {label:"Versions",     value:RELEASES.length, color:"#7C3AED",bg:"#F5F3FF"},
+        {label:"Versions",     value:RELEASES.length, color:"#E11D2E",bg:"#F5F3FF"},
         {label:"Total changes",value:total,           color:"#3B82F6",bg:"#EFF6FF"},
         {label:"New features", value:newF,            color:"#10B981",bg:"#ECFDF5"},
         {label:"Bugs squashed",value:fixed,           color:"#F97316",bg:"#FFF7ED"},

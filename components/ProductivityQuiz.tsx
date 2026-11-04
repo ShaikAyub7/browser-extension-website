@@ -91,7 +91,7 @@ export default function ProductivityQuiz() {
                           : i === step - 1
                             ? "56px"
                             : "24px",
-                      background: i < step ? "#7C3AED" : "var(--border)",
+                      background: i < step ? "#E11D2E" : "var(--border)",
                     }}
                   />
                 ))}
@@ -119,14 +119,14 @@ export default function ProductivityQuiz() {
                     style={{
                       background:
                         selected === i
-                          ? "linear-gradient(135deg,#6025C9,#7C3AED)"
+                          ? "linear-gradient(135deg,#B91222,#E11D2E)"
                           : "var(--card-bg)",
                       color: selected === i ? "#fff" : "var(--text-body)",
-                      borderColor: selected === i ? "#7C3AED" : "var(--border)",
+                      borderColor: selected === i ? "#E11D2E" : "var(--border)",
                       transform: selected === i ? "scale(1.02)" : "scale(1)",
                       boxShadow:
                         selected === i
-                          ? "0 4px 20px rgba(124,58,237,0.3)"
+                          ? "0 4px 20px rgba(225,29,46,0.3)"
                           : "none",
                     }}
                   >

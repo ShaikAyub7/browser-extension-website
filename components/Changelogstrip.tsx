@@ -48,7 +48,7 @@ export default function ChangelogStrip() {
           <div
             className="absolute left-[22px] top-4 bottom-4 w-px hidden md:block"
             style={{
-              background: "linear-gradient(180deg, #7C3AED, transparent)",
+              background: "linear-gradient(180deg, #E11D2E, transparent)",
             }}
           />
 

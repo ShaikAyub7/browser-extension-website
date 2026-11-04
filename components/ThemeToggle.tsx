@@ -31,9 +31,9 @@ export default function ThemeToggle() {
       className="relative inline-flex items-center w-7 h-7 rounded-full border transition-all duration-300 mr-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
       style={{
         background: dark
-          ? "linear-gradient(135deg,#6025C9,#7C3AED)"
-          : "linear-gradient(135deg,#e2d9ff,#c4b5fd)",
-        borderColor: dark ? "rgba(139,92,246,0.4)" : "#D3C0FF",
+          ? "linear-gradient(135deg,#B91222,#E11D2E)"
+          : "linear-gradient(135deg,#e2d9ff,#FFB3B9)",
+        borderColor: dark ? "rgba(240,64,79,0.4)" : "#F8C4C8",
       }}
     >
       <span className="absolute left-1.5 text-[10px] select-none pointer-events-none">

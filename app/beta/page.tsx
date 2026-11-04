@@ -31,7 +31,7 @@ export default function BetaPage() {
       <div className="absolute bottom-16 right-10 w-96 h-96 rounded-full blur-3xl opacity-30 pointer-events-none" style={{ background: "var(--violet-50)" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
-        <section className="glass rounded-[2rem] shadow-[0_24px_120px_rgba(124,58,237,0.12)] p-8 md:p-12">
+        <section className="glass rounded-[2rem] shadow-[0_24px_120px_rgba(225,29,46,0.12)] p-8 md:p-12">
           <div className="pill mb-6 inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
             Beta testing build
@@ -110,7 +110,7 @@ export default function BetaPage() {
         </section>
 
         <aside className="space-y-5">
-          <div className="glass rounded-[1.75rem] p-6 shadow-[0_18px_70px_rgba(124,58,237,0.1)]">
+          <div className="glass rounded-[1.75rem] p-6 shadow-[0_18px_70px_rgba(225,29,46,0.1)]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-11 h-11 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center">
                 <BugPlay className="w-5 h-5" />
