@@ -8,7 +8,8 @@ export default function ScrollUtilities() {
   useEffect(() => {
     const onScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       setProgress(pct);
       setVisible(scrollTop > 600);
@@ -27,7 +28,6 @@ export default function ScrollUtilities() {
         }}
         aria-hidden
       />
-
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Scroll to top"
@@ -36,11 +36,19 @@ export default function ScrollUtilities() {
           background: "linear-gradient(135deg,#6025C9,#7C3AED)",
           opacity: visible ? 1 : 0,
           pointerEvents: visible ? "auto" : "none",
-          transform: visible ? "scale(1) translateY(0)" : "scale(0.8) translateY(16px)",
+          transform: visible
+            ? "scale(1) translateY(0)"
+            : "scale(0.8) translateY(16px)",
         }}
       >
         <svg className="w-5 h-5 text-white" viewBox="0 0 20 20" fill="none">
-          <path d="M10 15V5M5 10l5-5 5 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path
+            d="M10 15V5M5 10l5-5 5 5"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </button>
     </>
