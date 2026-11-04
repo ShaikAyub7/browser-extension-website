@@ -8,6 +8,11 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import TipsSection from "@/components/TipsSection";
 import FAQSection from "@/components/FAQSection";
 import InstallSection from "@/components/InstallSection";
+import Marquee from "@/components/Marquee";
+import TimeCalculator from "@/components/TimeCalculator";
+import Manifesto from "@/components/Manifesto";
+import DayTimeline from "@/components/DayTimeline";
+import BigWordmark from "@/components/BigWordmark";
 import Footer from "@/components/Footer";
 import ChangelogStrip from "@/components/Changelogstrip";
 import ScrollUtilities from "@/components/Scrollutilities";
@@ -19,7 +24,11 @@ export default function Home() {
     <>
       <main>
         <HeroSection />
+        <Marquee />
+        <Manifesto />
         <FeaturesSection />
+        <TimeCalculator />
+        <DayTimeline />
         <FocusCommandCenter />
         <LiveDemo />
         <ChangelogStrip />
@@ -34,6 +43,7 @@ export default function Home() {
         <NewsletterSection />
       </main>
       <Footer />
+      <BigWordmark />
     </>
   );
 }

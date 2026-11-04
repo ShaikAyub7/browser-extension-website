@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Effects from "@/components/Effects";
 import CommandPalette from "@/components/CommandPalette";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -38,7 +39,7 @@ export default function RootLayout({
               try {
                 var t = localStorage.getItem('theme');
                 var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (t === 'dark' || (!t && prefersDark)) {
+                if (t !== 'light') {
                   document.documentElement.classList.add('dark');
                 }
               } catch(e){}
@@ -59,6 +60,7 @@ export default function RootLayout({
       >
         <Navbar />
         <CommandPalette />
+        <Effects />
         {children}
         <Analytics />
         <SpeedInsights />

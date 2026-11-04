@@ -1,14 +1,20 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Timer, ShieldBan, BarChart3 } from "lucide-react";
 
 const STORE = "https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe";
 const SITES = [["github.com", 78, "2h 14m"], ["youtube.com", 52, "1h 31m"], ["docs.google.com", 34, "58m"], ["reddit.com", 18, "31m"]] as const;
 
 export default function HeroSection() {
+  const mx = useMotionValue(0), my = useMotionValue(0);
+  const rx = useSpring(useTransform(my, [-1, 1], [8, -8]), { stiffness: 120, damping: 14 });
+  const ry = useSpring(useTransform(mx, [-1, 1], [-10, 10]), { stiffness: 120, damping: 14 });
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => { const r = e.currentTarget.getBoundingClientRect(); mx.set(((e.clientX - r.left) / r.width) * 2 - 1); my.set(((e.clientY - r.top) / r.height) * 2 - 1); };
+  const onLeave = () => { mx.set(0); my.set(0); };
   return (
     <section className="relative pt-32 pb-24 overflow-hidden section-base">
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
+      <div className="mesh absolute inset-0 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7">
           <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="pill inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono">
@@ -32,7 +38,8 @@ export default function HeroSection() {
           </dl>
         </div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 }} className="lg:col-span-5 animate-float-slow">
+        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 }} onMouseMove={onMove} onMouseLeave={onLeave} className="lg:col-span-5" style={{ perspective: 1000 }}>
+          <motion.div style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}>
           <div className="rounded-3xl p-6 shadow-hover" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
             <div className="flex items-center justify-between font-mono text-xs" style={{ color: "var(--text-muted)" }}><span>TODAY</span><span>Focus score 86</span></div>
             <div className="mt-2 font-display text-5xl font-extrabold" style={{ color: "var(--text-heading)" }}>5h 12m</div>
@@ -52,6 +59,7 @@ export default function HeroSection() {
               ))}
             </div>
           </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

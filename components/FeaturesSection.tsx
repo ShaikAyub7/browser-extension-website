@@ -24,7 +24,8 @@ export default function FeaturesSection() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(170px,auto)] gap-4">
           {F.map(({ i: Icon, t, d, c, big }, n) => (
             <motion.div key={t} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: n * 0.05 }}
-              className={`feature-card rounded-3xl p-6 flex flex-col justify-between ${c}`}
+              onMouseMove={e => { const r = e.currentTarget.getBoundingClientRect(); e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`); e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`); }}
+              className={`spot feature-card rounded-3xl p-6 flex flex-col justify-between ${c}`}
               style={big ? { background: "var(--violet-500)", color: "#fff", border: "none" } : undefined}>
               <Icon size={big ? 34 : 24} style={{ color: big ? "#fff" : "var(--violet-500)" }} />
               <div>
