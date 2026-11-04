@@ -8,6 +8,10 @@ export default function TimeCalculator() {
   const years = (h * 365 * (80 - age)) / (24 * 365);
   const wakingPct = Math.round((h / 16) * 100);
   const saved = years * 0.4;
+  const FIELDS = [
+    { l: "Hours online per day (distracting)", v: h, s: setH, mn: 1, mx: 12, u: "h" },
+    { l: "Your age", v: age, s: setAge, mn: 13, mx: 70, u: "" },
+  ];
   return (
     <section className="py-24 section-base">
       <div className="max-w-5xl mx-auto px-6">
@@ -17,7 +21,7 @@ export default function TimeCalculator() {
         </h2>
         <div className="mt-12 grid md:grid-cols-2 gap-8 rounded-3xl p-8 shadow-card" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
           <div className="space-y-8">
-            {[["Hours online per day (distracting)", h, setH, 1, 12, "h"], ["Your age", age, setAge, 13, 70, ""]].map(([l, v, s, mn, mx, u]: any) => (
+            {FIELDS.map(({ l, v, s, mn, mx, u }) => (
               <label key={l} className="block">
                 <div className="flex justify-between text-sm font-mono" style={{ color: "var(--text-muted)" }}><span>{l}</span><b style={{ color: "var(--text-heading)" }}>{v}{u}</b></div>
                 <input type="range" min={mn} max={mx} value={v} onChange={e => s(+e.target.value)} className="w-full mt-3 accent-[#E11D2E]" />

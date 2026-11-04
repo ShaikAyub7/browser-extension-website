@@ -1,6 +1,7 @@
 "use client";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Timer, ShieldBan, BarChart3 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 const STORE = "https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe";
 const SITES = [["github.com", 78, "2h 14m"], ["youtube.com", 52, "1h 31m"], ["docs.google.com", 34, "58m"], ["reddit.com", 18, "31m"]] as const;
@@ -54,7 +55,7 @@ export default function HeroSection() {
               ))}
             </div>
             <div className="mt-6 grid grid-cols-3 gap-2 text-xs font-mono">
-              {[[Timer, "Pomodoro"], [ShieldBan, "Blocking"], [BarChart3, "Reports"]].map(([Icon, l]: any) => (
+              {([[Timer, "Pomodoro"], [ShieldBan, "Blocking"], [BarChart3, "Reports"]] as [LucideIcon, string][]).map(([Icon, l]) => (
                 <div key={l} className="pill rounded-xl py-2 flex items-center justify-center gap-1.5"><Icon size={13} />{l}</div>
               ))}
             </div>
