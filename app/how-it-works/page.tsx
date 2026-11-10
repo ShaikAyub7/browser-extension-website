@@ -1,12 +1,12 @@
-import HowItWorks from '@/components/HowItWorks'
-import React from 'react'
+import HowItWorks from "@/components/HowItWorks";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-        <HowItWorks/>
+      <HowItWorks />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

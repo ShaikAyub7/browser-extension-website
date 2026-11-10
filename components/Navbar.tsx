@@ -36,7 +36,10 @@ export default function Navbar() {
           <div className="w-8 h-8 rounded-xl flex items-center justify-center shadow-violet group-hover:scale-105 transition-transform">
             <Image src="/image.png" alt="TabTime Logo" width={28} height={28} />
           </div>
-          <span className="font-display font-bold text-[17px] tracking-tight" style={{ color: "var(--text-heading)" }}>
+          <span
+            className="font-display font-bold text-[17px] tracking-tight"
+            style={{ color: "var(--text-heading)" }}
+          >
             Tab<span className="text-violet-500">Time</span>Tracker
           </span>
         </Link>
@@ -64,7 +67,7 @@ export default function Navbar() {
               >
                 {l.label}
               </a>
-            )
+            ),
           )}
         </div>
 
@@ -84,11 +87,26 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
             {mobileOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
@@ -114,7 +132,9 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
               >
                 {l.label}
-                {l.badge && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
+                {l.badge && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                )}
               </Link>
             ) : (
               <a
@@ -126,7 +146,7 @@ export default function Navbar() {
               >
                 {l.label}
               </a>
-            )
+            ),
           )}
           <a
             href="https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe"
