@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  BugPlay,
-  Download,
-  ShieldCheck,
-  Sparkles,
-  Package,
-  Puzzle,
-  RefreshCw,
-  Wrench,
-} from "lucide-react";
+import { AlertTriangle, BugPlay, Download, ShieldCheck, Sparkles, Package, Puzzle, RefreshCw, Wrench } from "lucide-react";
 import FeedbackReportCard from "@/components/beta/FeedbackReportCard";
 import ScreenshotsShowcase from "@/components/beta/ScreenshotsShowcase";
 
@@ -25,13 +15,8 @@ const betaDownloadUrl = "/beta/tabtime-beta.zip";
 function BetaStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/70 dark:bg-white/5 px-5 py-4 shadow-sm backdrop-blur-sm">
-      <p className="text-xs uppercase tracking-[0.24em] text-violet-500 font-semibold">
-        {label}
-      </p>
-      <p
-        className="mt-2 text-lg font-display font-bold"
-        style={{ color: "var(--text-heading)" }}
-      >
+      <p className="text-xs uppercase tracking-[0.24em] text-violet-500 font-semibold">{label}</p>
+      <p className="mt-2 text-lg font-display font-bold" style={{ color: "var(--text-heading)" }}>
         {value}
       </p>
     </div>
@@ -42,39 +27,24 @@ export default function BetaPage() {
   return (
     <main className="relative overflow-hidden pt-28 pb-20 px-6 section-violet">
       <div className="absolute inset-0 bg-radial-violet pointer-events-none" />
-      <div
-        className="absolute top-24 left-10 w-72 h-72 rounded-full blur-3xl opacity-40 pointer-events-none"
-        style={{ background: "var(--violet-100)" }}
-      />
-      <div
-        className="absolute bottom-16 right-10 w-96 h-96 rounded-full blur-3xl opacity-30 pointer-events-none"
-        style={{ background: "var(--violet-50)" }}
-      />
+      <div className="absolute top-24 left-10 w-72 h-72 rounded-full blur-3xl opacity-40 pointer-events-none" style={{ background: "var(--violet-100)" }} />
+      <div className="absolute bottom-16 right-10 w-96 h-96 rounded-full blur-3xl opacity-30 pointer-events-none" style={{ background: "var(--violet-50)" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
-        <section className="glass rounded-[2rem] shadow-[0_24px_120px_rgba(225,29,46,0.12)] p-8 md:p-12">
+        <section className="glass rounded-[2rem] shadow-[0_24px_120px_rgba(16,185,129,0.12)] p-8 md:p-12">
           <div className="pill mb-6 inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
             Beta testing build
           </div>
 
-          <h1
-            className="font-display font-extrabold text-4xl md:text-6xl leading-[1.02] tracking-tight mb-5"
-            style={{ color: "var(--text-heading)" }}
-          >
+          <h1 className="font-display font-extrabold text-4xl md:text-6xl leading-[1.02] tracking-tight mb-5" style={{ color: "var(--text-heading)" }}>
             Try the next release
-            <span className="block font-serif italic gradient-text">
-              before everyone else.
-            </span>
+            <span className="block font-serif italic gradient-text">before everyone else.</span>
           </h1>
 
-          <p
-            className="text-lg md:text-xl leading-relaxed max-w-2xl mb-8"
-            style={{ color: "var(--text-muted)" }}
-          >
-            This page is for testers who want pre-release builds, early fixes,
-            and experimental features. Download the beta zip to try changes
-            before they reach the stable Edge listing.
+          <p className="text-lg md:text-xl leading-relaxed max-w-2xl mb-8" style={{ color: "var(--text-muted)" }}>
+            This page is for testers who want pre-release builds, early fixes, and experimental features.
+            Download the beta zip to try changes before they reach the stable Edge listing.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -95,6 +65,8 @@ export default function BetaPage() {
             </Link>
           </div>
 
+         
+
           <div className="grid sm:grid-cols-3 gap-4">
             <BetaStat label="For testers" value="Pre-release access" />
             <BetaStat label="Update cadence" value="Faster than stable" />
@@ -103,20 +75,11 @@ export default function BetaPage() {
 
           <div className="mt-8 rounded-[1.5rem] border border-violet-100/80 bg-white/75 dark:bg-white/5 p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-10 h-10 rounded-2xl flex items-center justify-center"
-                style={{
-                  background: "var(--pill-bg)",
-                  color: "var(--pill-color)",
-                }}
-              >
+              <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "var(--pill-bg)", color: "var(--pill-color)" }}>
                 <Package className="w-5 h-5" />
               </div>
               <div>
-                <h3
-                  className="font-display font-bold text-lg"
-                  style={{ color: "var(--text-heading)" }}
-                >
+                <h3 className="font-display font-bold text-lg" style={{ color: "var(--text-heading)" }}>
                   What&apos;s inside the beta zip
                 </h3>
                 <p className="text-sm" style={{ color: "var(--text-faint)" }}>
@@ -125,49 +88,35 @@ export default function BetaPage() {
               </div>
             </div>
 
-            <div
-              className="grid sm:grid-cols-2 gap-3 text-sm"
-              style={{ color: "var(--text-muted)" }}
-            >
+            <div className="grid sm:grid-cols-2 gap-3 text-sm" style={{ color: "var(--text-muted)" }}>
               <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
                 <Puzzle className="w-4 h-4 mt-0.5 text-violet-500 flex-shrink-0" />
-                <span>
-                  Upcoming UI / UX improvements from the roadmap sections below.
-                </span>
+                <span>Upcoming UI / UX improvements from the roadmap sections below.</span>
               </div>
               <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
                 <RefreshCw className="w-4 h-4 mt-0.5 text-sky-500 flex-shrink-0" />
-                <span>
-                  Fresh beta updates and quick fixes before the stable release.
-                </span>
+                <span>Fresh beta updates and quick fixes before the stable release.</span>
               </div>
               <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
                 <Wrench className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
-                <span>
-                  Experimental settings and workflow tweaks for testing only.
-                </span>
+                <span>Experimental settings and workflow tweaks for testing only.</span>
               </div>
               <div className="flex items-start gap-2.5 rounded-2xl border border-violet-100/60 bg-white/70 dark:bg-white/5 p-4">
                 <Sparkles className="w-4 h-4 mt-0.5 text-emerald-500 flex-shrink-0" />
-                <span>
-                  Feature previews so users can help shape the next version.
-                </span>
+                <span>Feature previews so users can help shape the next version.</span>
               </div>
             </div>
           </div>
         </section>
 
         <aside className="space-y-5">
-          <div className="glass rounded-[1.75rem] p-6 shadow-[0_18px_70px_rgba(225,29,46,0.1)]">
+          <div className="glass rounded-[1.75rem] p-6 shadow-[0_18px_70px_rgba(16,185,129,0.1)]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-11 h-11 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center">
                 <BugPlay className="w-5 h-5" />
               </div>
               <div>
-                <h2
-                  className="font-display font-bold text-2xl"
-                  style={{ color: "var(--text-heading)" }}
-                >
+                <h2 className="font-display font-bold text-2xl" style={{ color: "var(--text-heading)" }}>
                   What beta means
                 </h2>
                 <p className="text-sm" style={{ color: "var(--text-faint)" }}>
@@ -176,10 +125,7 @@ export default function BetaPage() {
               </div>
             </div>
 
-            <ul
-              className="space-y-4 text-sm leading-relaxed"
-              style={{ color: "var(--text-muted)" }}
-            >
+            <ul className="space-y-4 text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
               <li className="flex gap-3">
                 <Sparkles className="w-4 h-4 mt-1 text-violet-500 flex-shrink-0" />
                 Try experimental features before the public release.
@@ -196,16 +142,10 @@ export default function BetaPage() {
           </div>
 
           <div className="glass rounded-[1.75rem] p-6 shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
-            <h3
-              className="font-display font-bold text-xl mb-3"
-              style={{ color: "var(--text-heading)" }}
-            >
+            <h3 className="font-display font-bold text-xl mb-3" style={{ color: "var(--text-heading)" }}>
               Testing checklist
             </h3>
-            <ol
-              className="space-y-3 text-sm"
-              style={{ color: "var(--text-muted)" }}
-            >
+            <ol className="space-y-3 text-sm" style={{ color: "var(--text-muted)" }}>
               <li>1. Install the beta zip from the button above.</li>
               <li>2. Use the extension for a few sessions.</li>
               <li>3. Share bugs, missing UI, or odd tracking behavior.</li>

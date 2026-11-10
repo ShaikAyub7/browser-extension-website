@@ -9,9 +9,7 @@ export default function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = saved ? saved === "dark" : prefersDark;
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
@@ -33,14 +31,19 @@ export default function ThemeToggle() {
       className="relative inline-flex items-center w-7 h-7 rounded-full border transition-all duration-300 mr-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
       style={{
         background: dark
-          ? "linear-gradient(135deg,#B91222,#E11D2E)"
-          : "linear-gradient(135deg,#e2d9ff,#FFB3B9)",
-        borderColor: dark ? "rgba(240,64,79,0.4)" : "#F8C4C8",
+          ? "linear-gradient(135deg,#059669,#10B981)"
+          : "linear-gradient(135deg,#e2d9ff,#D9F99D)",
+        borderColor: dark ? "rgba(132,204,22,0.4)" : "#A7F3D0",
       }}
     >
       <span className="absolute left-1.5 text-[10px] select-none pointer-events-none">
-        {dark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+        {dark ? 
+        <Moon className="w-4 h-4" /> 
+        : 
+        <Sun className="w-4 h-4" />}
+        
       </span>
+      
     </button>
   );
 }

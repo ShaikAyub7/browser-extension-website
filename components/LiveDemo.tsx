@@ -99,7 +99,7 @@ export default function LiveDemo() {
             style={{
               background: "var(--card-bg)",
               borderColor: "var(--border-violet)",
-              boxShadow: "0 20px 60px rgba(225,29,46,0.18)",
+              boxShadow: "0 20px 60px rgba(16,185,129,0.18)",
             }}
           >
             <div className="px-5 pt-5 pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
@@ -126,7 +126,7 @@ export default function LiveDemo() {
                     onClick={() => setTab(t)}
                     className="text-[10px] px-2.5 py-1 rounded-full font-semibold capitalize transition-all"
                     style={{
-                      background: tab === t ? "#E11D2E" : "var(--bg-muted)",
+                      background: tab === t ? "#10B981" : "var(--bg-muted)",
                       color: tab === t ? "#fff" : "var(--text-muted)",
                     }}
                   >
@@ -157,7 +157,7 @@ export default function LiveDemo() {
                       className="text-center px-3 py-1.5 rounded-xl"
                       style={{ background: score >= 80 ? "#ECFDF5" : score >= 60 ? "#FFF7ED" : "#FEF2F2" }}
                     >
-                      <p className="text-lg font-extrabold font-display" style={{ color: score >= 80 ? "#10B981" : score >= 60 ? "#F97316" : "#EF4444" }}>
+                      <p className="text-lg font-extrabold font-display" style={{ color: score >= 80 ? "#10B981" : score >= 60 ? "#84CC16" : "#EF4444" }}>
                         {score}
                       </p>
                       <p className="text-[9px] font-mono" style={{ color: "var(--text-faint)" }}>score</p>
@@ -185,7 +185,7 @@ export default function LiveDemo() {
                               <button
                                 onClick={() => addLimit(i)}
                                 className="text-[9px] px-1.5 py-0.5 rounded-full transition-all hover:scale-110"
-                                style={{ background: "var(--violet-50)", color: "#E11D2E", border: "1px solid var(--border-violet)" }}
+                                style={{ background: "var(--violet-50)", color: "#10B981", border: "1px solid var(--border-violet)" }}
                                 title="Reduce limit by 10m"
                               >
                                 −
@@ -226,7 +226,7 @@ export default function LiveDemo() {
                             height: `${Math.round((h / 140) * 80)}px`,
                             background:
                               i === 6
-                                ? "linear-gradient(180deg,#E11D2E,#F0525E)"
+                                ? "linear-gradient(180deg,#10B981,#34D399)"
                                 : "var(--bg-muted)",
                             border: i === 6 ? "none" : "1px solid var(--border)",
                           }}
@@ -264,8 +264,8 @@ export default function LiveDemo() {
                   <div
                     className="w-32 h-32 rounded-full mx-auto mb-5 flex flex-col items-center justify-center border-4 transition-all"
                     style={{
-                      borderColor: focusActive ? "#E11D2E" : "var(--border)",
-                      boxShadow: focusActive ? "0 0 32px rgba(225,29,46,0.3)" : "none",
+                      borderColor: focusActive ? "#10B981" : "var(--border)",
+                      boxShadow: focusActive ? "0 0 32px rgba(16,185,129,0.3)" : "none",
                       background: "var(--bg-soft)",
                     }}
                   >
@@ -303,7 +303,7 @@ export default function LiveDemo() {
                         onClick={() => { setFocusSecs(m * 60); setFocusActive(false); }}
                         className="text-[10px] px-2.5 py-1 rounded-full font-semibold transition-all"
                         style={{
-                          background: focusMins === m && !focusActive ? "#E11D2E" : "var(--bg-muted)",
+                          background: focusMins === m && !focusActive ? "#10B981" : "var(--bg-muted)",
                           color: focusMins === m && !focusActive ? "#fff" : "var(--text-muted)",
                         }}
                       >

@@ -27,7 +27,7 @@ export default function AnnouncementBanner() {
       style={{
         top: 0,
         height: "40px",
-        background: "linear-gradient(90deg,#4C1D95,#B91222,#E11D2E,#FF5A64)",
+        background: "linear-gradient(90deg,#4C1D95,#059669,#10B981,#0EA5E9)",
         color: "#fff",
       }}
     >

@@ -5,13 +5,13 @@ import { AlarmClock, ArrowRight, BrainCircuit, Clock3, Gauge, ShieldCheck, Spark
 
 const timeline = [
   { time: "09:00", label: "Work limits turn on", tone: "#10B981" },
-  { time: "11:30", label: "Focus block protects deep work", tone: "#E11D2E" },
-  { time: "16:45", label: "AI suggests tomorrow's cap", tone: "#F97316" },
+  { time: "11:30", label: "Focus block protects deep work", tone: "#10B981" },
+  { time: "16:45", label: "AI suggests tomorrow's cap", tone: "#84CC16" },
 ];
 
 const controls = [
   { icon: Clock3, label: "Work window", value: "9 AM - 5 PM", color: "#3B82F6" },
-  { icon: Gauge, label: "Daily cap", value: "4h 30m", color: "#E11D2E" },
+  { icon: Gauge, label: "Daily cap", value: "4h 30m", color: "#10B981" },
   { icon: ShieldCheck, label: "Blocked sites", value: "12 active", color: "#EF4444" },
 ];
 

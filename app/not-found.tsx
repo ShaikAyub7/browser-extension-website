@@ -6,14 +6,18 @@ function NotFound() {
       <div className="max-w-md text-center">
         <h1 className="text-6xl font-bold ">404</h1>
 
-        <h2 className="mt-4 text-2xl font-semibold">Page Not Found</h2>
+        <h2 className="mt-4 text-2xl font-semibold">
+          Page Not Found
+        </h2>
 
         <p className="mt-4 ">
           The Privacy Policy page URL has changed and the page you are looking
           for is no longer available.
         </p>
 
-        <p className="mt-2 ">Please visit the updated Privacy Policy page.</p>
+        <p className="mt-2 ">
+          Please visit the updated Privacy Policy page.
+        </p>
 
         <Link
           href="/privacy"

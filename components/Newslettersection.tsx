@@ -4,9 +4,7 @@ import { useState } from "react";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,6 +14,7 @@ export default function NewsletterSection() {
       return;
     }
     setStatus("loading");
+    
     await new Promise((r) => setTimeout(r, 900));
     setStatus("success");
     setEmail("");
@@ -24,26 +23,21 @@ export default function NewsletterSection() {
   return (
     <section
       className="relative py-16 overflow-hidden"
-      style={{
-        background: "var(--bg-muted)",
-        borderTop: "1px solid var(--border)",
-      }}
+      style={{ background: "var(--bg-muted)", borderTop: "1px solid var(--border)" }}
     >
       <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
       <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
+
         <div className="text-3xl mb-4">
-          <Mailbox className="mx-auto w-12 h-12 text-gray-500" />
+<Mailbox className="mx-auto w-12 h-12 text-gray-500" />
+
+
         </div>
-        <h2
-          className="font-display font-extrabold text-2xl md:text-3xl mb-2"
-          style={{ color: "var(--text-heading)" }}
-        >
+        <h2 className="font-display font-extrabold text-2xl md:text-3xl mb-2" style={{ color: "var(--text-heading)" }}>
           Get release notes in your inbox
         </h2>
         <p className="mb-8 text-sm" style={{ color: "var(--text-muted)" }}>
-          We email only when there&apos;s something worth reading. No spam, no
-          marketing fluff — just changelog summaries and productivity tips.
-          Unsubscribe anytime.
+          We email only when there&apos;s something worth reading. No spam, no marketing fluff — just changelog summaries and productivity tips. Unsubscribe anytime.
         </p>
 
         {status === "success" ? (
@@ -56,29 +50,13 @@ export default function NewsletterSection() {
             }}
           >
             <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none">
-              <circle
-                cx="10"
-                cy="10"
-                r="9"
-                fill="rgba(16,185,129,0.2)"
-                stroke="#10B981"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M6.5 10.5l2.5 2.5 4.5-5"
-                stroke="#10B981"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <circle cx="10" cy="10" r="9" fill="rgba(16,185,129,0.2)" stroke="#10B981" strokeWidth="1.5"/>
+              <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             You&apos;re in! Check your inbox to confirm.
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               value={email}
@@ -89,10 +67,7 @@ export default function NewsletterSection() {
                 background: "var(--card-bg)",
                 border: `1px solid ${status === "error" ? "#EF4444" : "var(--border)"}`,
                 color: "var(--text-body)",
-                boxShadow:
-                  status === "error"
-                    ? "0 0 0 3px rgba(239,68,68,0.15)"
-                    : "none",
+                boxShadow: status === "error" ? "0 0 0 3px rgba(239,68,68,0.15)" : "none",
               }}
               disabled={status === "loading"}
             />
@@ -103,30 +78,13 @@ export default function NewsletterSection() {
             >
               {status === "loading" ? (
                 <>
-                  <svg
-                    className="w-4 h-4 animate-spin"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="rgba(255,255,255,0.3)"
-                      strokeWidth="2"
-                    />
-                    <path
-                      d="M12 2a10 10 0 0 1 10 10"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
+                  <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="2"/>
+                    <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                   Subscribing
                 </>
-              ) : (
-                "Subscribe →"
-              )}
+              ) : "Subscribe →"}
             </button>
           </form>
         )}
@@ -137,10 +95,7 @@ export default function NewsletterSection() {
           </p>
         )}
 
-        <p
-          className="text-xs font-mono mt-4"
-          style={{ color: "var(--text-faint)" }}
-        >
+        <p className="text-xs font-mono mt-4" style={{ color: "var(--text-faint)" }}>
           Zero spam. Unsubscribe in one click.
         </p>
       </div>

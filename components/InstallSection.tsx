@@ -20,7 +20,7 @@ export default function InstallSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[360px] bg-violet-200 rounded-full blur-3xl opacity-40 pointer-events-none"/>
 
       <div className="max-w-3xl mx-auto relative z-10">
-        <div className=" rounded-3xl p-12 md:p-16 text-center shadow-[0_20px_80px_rgba(225,29,46,0.14)] border border-violet-200 reveal">
+        <div className=" rounded-3xl p-12 md:p-16 text-center shadow-[0_20px_80px_rgba(16,185,129,0.14)] border border-violet-200 reveal">
           <div className="w-20 h-20 rounded-2xl bg-gradient-to-br  flex items-center justify-center mx-auto mb-6 shadow-violet">
             <Image src="/image.png" alt="TabTime Logo" width={32} height={32} />
           </div>

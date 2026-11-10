@@ -46,7 +46,7 @@ export default function HowItWorks() {
                 }`}>
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0 transition-all"
-                    style={active===i ? {background:s.bg,boxShadow:`0 0 0 3px ${s.color}20`} : {background:"#F3F0EE"}}>
+                    style={active===i ? {background:s.bg,boxShadow:`0 0 0 3px ${s.color}20`} : {background:"#EEF4F1"}}>
                     <Icon className="w-5 h-5" style={active===i ? {color:s.color} : {color:"#C8C2D1"}}/>
                   </div>
                   <div className="flex-1">
@@ -73,7 +73,7 @@ export default function HowItWorks() {
                 <div className="flex justify-center mb-6">
                   <div className="relative w-32 h-32">
                     <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
-                      <circle cx="60" cy="60" r="50" fill="none" stroke="#E8E3E0" strokeWidth="8"/>
+                      <circle cx="60" cy="60" r="50" fill="none" stroke="#DCE7E1" strokeWidth="8"/>
                       <circle cx="60" cy="60" r="50" fill="none"
                         stroke={STEPS[active].color} strokeWidth="8" strokeLinecap="round"
                         strokeDasharray={`${((active+1)/4)*314.16} 314.16`}
@@ -95,7 +95,7 @@ export default function HowItWorks() {
                       className="h-2 rounded-full transition-all duration-300"
                       style={i===active
                         ? {background:STEPS[active].color, width:"20px"}
-                        : {background:"#CFC8C4", width:"8px"}}/>
+                        : {background:"#C2D2CA", width:"8px"}}/>
                   ))}
                 </div>
               </div>

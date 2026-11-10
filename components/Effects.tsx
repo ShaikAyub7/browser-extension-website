@@ -17,7 +17,7 @@ export default function Effects() {
     <>
       <div ref={bar} className="fixed top-0 left-0 right-0 h-[3px] z-[110] origin-left scale-x-0" style={{ background: "var(--violet-500)" }} />
       <div ref={glow} aria-hidden className="pointer-events-none fixed top-0 left-0 z-0 hidden md:block w-[500px] h-[500px] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(225,29,46,0.10), transparent 65%)", transition: "transform .15s ease-out" }} />
+        style={{ background: "radial-gradient(circle, rgba(16,185,129,0.10), transparent 65%)", transition: "transform .15s ease-out" }} />
     </>
   );
 }

@@ -18,15 +18,15 @@ const config: Config = {
       '8xl': '90rem', // 1440px
     },
       colors: {
-        snow:   { 50:"#FAF8F7", 100:"#F3F0EE", 200:"#E8E3E0", 300:"#CFC8C4" },
-        ink:    { 400:"#A09A96", 500:"#6B6460", 700:"#2E2A2A", 900:"#0F0D0D" },
-        violet: { 50:"#FFF3F3", 100:"#FDE3E4", 200:"#F8C4C8", 400:"#F0525E", 500:"#E11D2E", 600:"#B91222" },
-        indigo: { 400:"#FF5A64" },
+        snow:   { 50:"#F8FBF9", 100:"#EEF4F1", 200:"#DCE7E1", 300:"#C2D2CA" },
+        ink:    { 400:"#8FA89C", 500:"#587064", 700:"#24382F", 900:"#0B1F17" },
+        violet: { 50:"#ECFDF5", 100:"#D1FAE5", 200:"#A7F3D0", 400:"#34D399", 500:"#10B981", 600:"#059669" },
+        indigo: { 400:"#0EA5E9" },
       },
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, #F8C4C8 1px, transparent 1px)",
-        "radial-violet": "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(225,29,46,0.09) 0%, transparent 70%)",
-        "radial-indigo": "radial-gradient(ellipse 60% 50% at 85% 50%, rgba(255,90,100,0.07) 0%, transparent 65%)",
+        "dot-grid": "radial-gradient(circle, #A7F3D0 1px, transparent 1px)",
+        "radial-violet": "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(16,185,129,0.09) 0%, transparent 70%)",
+        "radial-indigo": "radial-gradient(ellipse 60% 50% at 85% 50%, rgba(14,165,233,0.07) 0%, transparent 65%)",
       },
     },
   },

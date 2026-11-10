@@ -24,7 +24,7 @@ export default function ScrollUtilities() {
         className="fixed top-0 left-0 z-[60] h-0.5 transition-all duration-100"
         style={{
           width: `${progress}%`,
-          background: "linear-gradient(90deg,#B91222,#E11D2E,#F0525E)",
+          background: "linear-gradient(90deg,#059669,#10B981,#34D399)",
         }}
         aria-hidden
       />
@@ -33,7 +33,7 @@ export default function ScrollUtilities() {
         aria-label="Scroll to top"
         className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 shadow-violet"
         style={{
-          background: "linear-gradient(135deg,#B91222,#E11D2E)",
+          background: "linear-gradient(135deg,#059669,#10B981)",
           opacity: visible ? 1 : 0,
           pointerEvents: visible ? "auto" : "none",
           transform: visible
