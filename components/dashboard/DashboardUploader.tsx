@@ -36,10 +36,16 @@ export default function DashboardUploader({
           className="sr-only"
           onChange={onChange}
         />
-        <div className="mx-auto mb-3 w-12 h-12 rounded-2xl flex items-center justify-center" style={{ background: "var(--pill-bg)", color: "var(--pill-color)" }}>
+        <div
+          className="mx-auto mb-3 w-12 h-12 rounded-2xl flex items-center justify-center"
+          style={{ background: "var(--pill-bg)", color: "var(--pill-color)" }}
+        >
           <FileUp className="w-5 h-5" />
         </div>
-        <p className="font-display font-bold text-lg mb-1" style={{ color: "var(--text-heading)" }}>
+        <p
+          className="font-display font-bold text-lg mb-1"
+          style={{ color: "var(--text-heading)" }}
+        >
           Drop your export file here
         </p>
         <p className="text-sm" style={{ color: "var(--text-muted)" }}>

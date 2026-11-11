@@ -1,12 +1,12 @@
-import StatsSection from '@/components/StatsSection'
-import React from 'react'
+import StatsSection from "@/components/StatsSection";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-        <StatsSection/>
+      <StatsSection />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

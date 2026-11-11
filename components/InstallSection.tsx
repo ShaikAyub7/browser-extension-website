@@ -8,16 +8,25 @@ export default function InstallSection() {
   const [showOnboard, setShowOnboard] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
-      { threshold: 0.2 }
+      (entries) =>
+        entries.forEach(
+          (e) => e.isIntersecting && e.target.classList.add("visible"),
+        ),
+      { threshold: 0.2 },
     );
-    ref.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    ref.current
+      ?.querySelectorAll(".reveal")
+      .forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="install" ref={ref} className="relative py-28 px-6 overflow-hidden section-violet">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[360px] bg-violet-200 rounded-full blur-3xl opacity-40 pointer-events-none"/>
+    <section
+      id="install"
+      ref={ref}
+      className="relative py-28 px-6 overflow-hidden section-violet"
+    >
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[360px] bg-violet-200 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className=" rounded-3xl p-12 md:p-16 text-center shadow-[0_20px_80px_rgba(16,185,129,0.14)] border border-violet-200 reveal">
@@ -26,26 +35,37 @@ export default function InstallSection() {
           </div>
 
           <h2 className="font-display font-extrabold text-4xl md:text-5xl mb-4 leading-tight">
-            Start tracking in<br/>
+            Start tracking in
+            <br />
             <span className="font-serif italic gradient-text">30 seconds.</span>
           </h2>
           <p className=" text-lg mb-8 max-w-md mx-auto">
             Free forever. No sign-up. Your data never leaves your device.
           </p>
 
-          <a href="https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe" target="_blank" rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-display font-bold text-lg mb-6">
+          <a
+            href="https://microsoftedge.microsoft.com/addons/detail/tab-time-tracker/aoecofhfffbfnkekppdgicmnfjmfdmoe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-display font-bold text-lg mb-6"
+          >
             Add to Edge — It's Free
           </a>
 
           <div className="mb-6">
-            <button onClick={() => setShowOnboard(true)} className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors">
+            <button
+              onClick={() => setShowOnboard(true)}
+              className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors"
+            >
               Guided install & onboarding →
             </button>
           </div>
 
           <div className="mb-8">
-            <a href="/beta" className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors">
+            <a
+              href="/beta"
+              className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors"
+            >
               Want the testing build? Visit the beta download page →
             </a>
           </div>
@@ -56,19 +76,25 @@ export default function InstallSection() {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             {[
-              {icon:"🔒",label:"100% private"},
-              {icon:"⚡",label:"Zero performance impact"},
-              {icon:"🆓",label:"Free forever"},
-              {icon:"🧩",label:"Manifest V3"},
+              { icon: "🔒", label: "100% private" },
+              { icon: "⚡", label: "Zero performance impact" },
+              { icon: "🆓", label: "Free forever" },
+              { icon: "🧩", label: "Manifest V3" },
             ].map((b) => (
-              <div key={b.label} className="flex items-center gap-1.5 text-ink-500 text-sm">
+              <div
+                key={b.label}
+                className="flex items-center gap-1.5 text-ink-500 text-sm"
+              >
                 <span>{b.label}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
-          <OnboardingModal open={showOnboard} onClose={() => setShowOnboard(false)} />
+      <OnboardingModal
+        open={showOnboard}
+        onClose={() => setShowOnboard(false)}
+      />
     </section>
   );
 }

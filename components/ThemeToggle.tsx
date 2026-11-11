@@ -9,7 +9,9 @@ export default function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const isDark = saved ? saved === "dark" : prefersDark;
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
@@ -37,13 +39,8 @@ export default function ThemeToggle() {
       }}
     >
       <span className="absolute left-1.5 text-[10px] select-none pointer-events-none">
-        {dark ? 
-        <Moon className="w-4 h-4" /> 
-        : 
-        <Sun className="w-4 h-4" />}
-        
+        {dark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
       </span>
-      
     </button>
   );
 }
